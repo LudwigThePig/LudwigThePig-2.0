@@ -5,7 +5,7 @@ const port = process.env.PORT
 
 const app = express();
 
-app.use(express.static(path.resolve(__dirname, 'dist')));
+app.use(express.static(path.resolve(__dirname, 'bin')));
 
 app.listen(port, err => err 
   ? console.error(err)
