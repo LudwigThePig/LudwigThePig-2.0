@@ -1,6 +1,70 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+/*************************************************************
+******************* About This Style Sheet *******************
+**************************************************************
+
+
+
+
+/*************************************************************
+*************************************************************/
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700,900&display=swap');
+$black: #000;
+$white: #fff;
+
+html {
+  font-size: 10px;
+}
 
 body {
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif;
+  background: $black;
+  color: $white;
+}
+
+.app {
+  
+  h1 {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 2.2rem;
+  }
+  h4 {
+    font-size: 1.8rem;
+  }
+  
+  p {
+    font-size: 1.4rem;
+  }
+  
+  // Grid settings for desktop
+  display: grid;
+  grid-template-columns: 1.7fr 0.3fr;
+  grid-template-rows: 1.7fr 0.3fr;
+  grid-template-areas: "jumbo navbar" "footer footer";
+  
+  .jumbo {
+    grid-area: jumbo;
+
+    h1 {
+
+      font-size: 7rem;
+      font-weight: 300;
+      text-align: center;
+    }
+  }
+  
+  .navbar { 
+    grid-area: navbar; 
+    a {
+      font-size: 3.5rem;
+    }
+  }
+
+  .footer { grid-area: footer; }
 }

@@ -1,4 +1,6 @@
 import * as React from 'react';
+import Navbar from './navabar'
+// import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 interface IAppProps {
   compiler: string;
@@ -14,7 +16,10 @@ export default class App extends React.Component <IAppProps, IAppState> {
   render() {
     return (
       <div className="app">
-          Hello World!
+        <div className="jumbo">
+          <h1>Welcome to<br/>LudwigThePig</h1>
+        </div>
+          <Navbar />
       </div>
     )
   }
