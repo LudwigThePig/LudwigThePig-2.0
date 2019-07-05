@@ -18,7 +18,7 @@ export default class App extends React.Component <IAppProps, IAppState> {
     return (
       <div className="app">
         <div className="jumbo">
-          <h1>Welcome to<br/>LudwigThePig</h1>
+          <h1 className="logo">Welcome to<br/>LudwigThePig</h1>
         </div>
           <Navbar />
           <Footer />

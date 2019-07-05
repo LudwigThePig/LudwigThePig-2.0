@@ -7,6 +7,7 @@ __Sections__
 2. HTML Base Styling
 3. Modifiers
 4. Component Styles
+5. Animations
 
 
 /*************************************************************
@@ -85,7 +86,7 @@ a {
 
 
 ///////////////////
-// 3. Components //
+// 4. Components //
 ///////////////////
 
 .app {
@@ -106,9 +107,13 @@ a {
     font-weight: 300;
     text-align: center;
   }
+  .logo {
+    -webkit-animation: focus-in-expand 1.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: focus-in-expand 1.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  }
 }
 
-.navbar { 
+.navbar {
   grid-area: navbar; 
   display: flex;
   flex-direction: column;
@@ -117,8 +122,99 @@ a {
   a {
     font-size: 3.5rem;
   }
+
+  -webkit-animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.4s both;
+	        animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.4s both;
 }
 
 .footer { 
-  grid-area: footer; 
+  grid-area: footer;
+
+  -webkit-animation: slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.4s both;
+	        animation: slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.4s both;
+}
+
+
+///////////////////
+// 5. Animations //
+///////////////////
+
+// << JUMBO >> \\
+@-webkit-keyframes focus-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+}
+@keyframes focus-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+// << NAVBAR >> \\
+@-webkit-keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+            transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+            transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+// << FOOTER >> \\
+@-webkit-keyframes slide-in-bottom {
+  0% {
+    -webkit-transform: translateY(1000px);
+            transform: translateY(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-bottom {
+  0% {
+    -webkit-transform: translateY(1000px);
+            transform: translateY(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
 }
