@@ -32,5 +32,5 @@ module.exports = {
       }
     ],
   },
-  plugins: [plugins.manifest, plugins.serviceWorker]
+  plugins: [plugins.manifest, plugins.serviceWorker, plugins.copy]
 }

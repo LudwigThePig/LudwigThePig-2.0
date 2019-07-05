@@ -1,3 +1,9 @@
 {
-  "main.js": "bundle.js"
+  "main.js": "bundle.js",
+  "assets/apple-touch-icon.png": "assets/apple-touch-icon.png",
+  "assets/favicon-16x16.png": "assets/favicon-16x16.png",
+  "assets/favicon-32x32.png": "assets/favicon-32x32.png",
+  "assets/favicon-512x512.png": "assets/favicon-512x512.png",
+  "assets/favicon.ico": "assets/favicon.ico",
+  "mainfest.json": "mainfest.json"
 }

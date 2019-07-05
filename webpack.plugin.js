@@ -19,3 +19,7 @@ exports.serviceWorker = new SWPrecacheWebpackPlugin({
   navigateFallback: '/index.html',
   staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/],
 });
+
+exports.copy = new CopyWebpackPlugin([
+  { from: 'client/pwa' }, // define the path of the files to be copied
+]);
