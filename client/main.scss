@@ -2,14 +2,30 @@
 ******************* About This Style Sheet *******************
 **************************************************************
 
-
+__Sections__
+1. Imports
+2. HTML Base Styling
+3. Modifiers
+4. Component Styles
 
 
 /*************************************************************
 *************************************************************/
+////////////////
+// 1. IMPORTS //
+////////////////
+
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700,900&display=swap');
 $black: #000;
 $white: #fff;
+$orange: #c97c5d;
+$grey: #C0C5C1;
+
+
+//////////////
+// 2. HTML //
+/////////////
+
 
 html {
   font-size: 10px;
@@ -22,49 +38,73 @@ body {
   color: $white;
 }
 
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+h2 {
+  font-size: 2.5rem;
+}
+h3 {
+  font-size: 2.2rem;
+}
+h4 {
+  font-size: 1.8rem;
+}
+
+p {
+  font-size: 1.4rem;
+}
+
+a {
+  color: $white;
+  text-decoration: none;
+  text-emphasis: none;
+  color: $orange;
+}
+
+//////////////////
+// 3. Modifiers //
+//////////////////
+
+.active {
+  color: $grey;
+}
+
+
+///////////////////
+// 3. Components //
+///////////////////
+
 .app {
-  
-  h1 {
-    font-size: 3rem;
-    font-weight: bold;
-  }
-  h2 {
-    font-size: 2.5rem;
-  }
-  h3 {
-    font-size: 2.2rem;
-  }
-  h4 {
-    font-size: 1.8rem;
-  }
-  
-  p {
-    font-size: 1.4rem;
-  }
-  
   // Grid settings for desktop
   display: grid;
   grid-template-columns: 1.7fr 0.3fr;
   grid-template-rows: 1.7fr 0.3fr;
   grid-template-areas: "jumbo navbar" "footer footer";
-  
-  .jumbo {
-    grid-area: jumbo;
-
-    h1 {
-
-      font-size: 7rem;
-      font-weight: 300;
-      text-align: center;
-    }
-  }
-  
-  .navbar { 
-    grid-area: navbar; 
-    a {
-      font-size: 3.5rem;
-    }
-  }
-
-  .footer { grid-area: footer; }
 }
+  
+
+
+.jumbo {
+  grid-area: jumbo;
+
+  h1 {
+    font-size: 7rem;
+    font-weight: 300;
+    text-align: center;
+  }
+}
+
+.navbar { 
+  grid-area: navbar; 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  a {
+    font-size: 3.5rem;
+  }
+}
+
+.footer { grid-area: footer; }
