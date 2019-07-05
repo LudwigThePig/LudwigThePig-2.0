@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@fortawesome/react-fontawesome": "^0.1.4",
     "@types/node": "^12.0.12",
     "css-modules-typescript-loader": "^2.0.4",
     "dotenv": "^8.0.0",
