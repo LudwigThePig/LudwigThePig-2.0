@@ -17,10 +17,10 @@ __Sections__
 ////////////////
 
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700,900&display=swap');
-$black: #000;
+$black: #001011;
 $white: #fff;
 $orange: #c97c5d;
-$grey: #C0C5C1;
+$grey: #AEB7B3;
 
 
 //////////////
@@ -64,6 +64,10 @@ a {
   color: $orange;
 }
 
+a:hover {
+  color: $white;
+}
+
 //////////////////
 // 3. Modifiers //
 //////////////////
@@ -74,16 +78,17 @@ a {
 
 .fa {
   text-align: center;
-  background: $orange;
-  color:black;
-  color: white;
+  background: $grey;
+  color: $orange;
   padding: 4px;
   margin: 5px 2px;
-  color: $white;
   font-size: 4rem;
   width: 80px;
 }
-
+.fa:hover {
+  background: $white;
+  cursor: pointer;
+}
 
 ///////////////////
 // 4. Components //
@@ -97,6 +102,7 @@ a {
   grid-template-areas: "jumbo navbar" "footer footer";
   height: 100vh;
   width: 100vw;
+  position: fixed;
 }
   
 .jumbo {
@@ -123,15 +129,15 @@ a {
     font-size: 3.5rem;
   }
 
-  -webkit-animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.4s both;
-	        animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.4s both;
+  -webkit-animation: slide-in-right 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) .8s both;
+  animation: slide-in-right 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) .8s both;
 }
 
 .footer { 
   grid-area: footer;
 
-  -webkit-animation: slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.4s both;
-	        animation: slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.4s both;
+  -webkit-animation: slide-in-bottom 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) .8s both;
+	animation: slide-in-bottom 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) .8s both;
 }
 
 
@@ -144,12 +150,12 @@ a {
   0% {
     letter-spacing: -0.5em;
     -webkit-filter: blur(12px);
-            filter: blur(12px);
+    filter: blur(12px);
     opacity: 0;
   }
   100% {
     -webkit-filter: blur(0px);
-            filter: blur(0px);
+    filter: blur(0px);
     opacity: 1;
   }
 }
@@ -157,12 +163,12 @@ a {
   0% {
     letter-spacing: -0.5em;
     -webkit-filter: blur(12px);
-            filter: blur(12px);
+    filter: blur(12px);
     opacity: 0;
   }
   100% {
     -webkit-filter: blur(0px);
-            filter: blur(0px);
+    filter: blur(0px);
     opacity: 1;
   }
 }
@@ -171,24 +177,24 @@ a {
 @-webkit-keyframes slide-in-right {
   0% {
     -webkit-transform: translateX(1000px);
-            transform: translateX(1000px);
+    transform: translateX(1000px);
     opacity: 0;
   }
   100% {
     -webkit-transform: translateX(0);
-            transform: translateX(0);
+    transform: translateX(0);
     opacity: 1;
   }
 }
 @keyframes slide-in-right {
   0% {
     -webkit-transform: translateX(1000px);
-            transform: translateX(1000px);
+    transform: translateX(1000px);
     opacity: 0;
   }
   100% {
     -webkit-transform: translateX(0);
-            transform: translateX(0);
+    transform: translateX(0);
     opacity: 1;
   }
 }
@@ -197,24 +203,24 @@ a {
 @-webkit-keyframes slide-in-bottom {
   0% {
     -webkit-transform: translateY(1000px);
-            transform: translateY(1000px);
+    transform: translateY(1000px);
     opacity: 0;
   }
   100% {
     -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
     opacity: 1;
   }
 }
 @keyframes slide-in-bottom {
   0% {
     -webkit-transform: translateY(1000px);
-            transform: translateY(1000px);
+    transform: translateY(1000px);
     opacity: 0;
   }
   100% {
     -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
     opacity: 1;
   }
 }

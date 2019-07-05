@@ -8,10 +8,6 @@ library.add(fab);
 
 const Footer = () => (
   <footer className="footer">
-          <FontAwesomeIcon icon={['fab', 'linkedin']} className='fa' />
-          <FontAwesomeIcon icon={['fab', 'linkedin']} className='fa' />
-          <FontAwesomeIcon icon={['fab', 'linkedin']} className='fa' />
-
     <a href="https://www.linkedin.com/in/morgangalvin">
       <FontAwesomeIcon icon={['fab', 'linkedin']} className='fa' />
     </a>
