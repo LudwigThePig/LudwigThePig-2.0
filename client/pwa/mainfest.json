@@ -1,0 +1,15 @@
+{
+  "short_name": "LtP",
+  "name": "Ludwig the Pig",
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "./index.html",
+  "display": "standalone",
+  "theme_color": "#001011",
+  "background_color": "#001011"
+}

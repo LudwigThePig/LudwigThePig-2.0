@@ -6,3 +6,5 @@ const styles  = require('./main.scss');
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(<App compiler="TypeScript" framework="React" />, document.getElementById('root'));
+
+registerServiceWorker();
