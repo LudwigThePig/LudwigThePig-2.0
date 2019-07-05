@@ -1,4 +1,5 @@
 const path = require('path');
+const plugins = require('./webpack.plugin');
 
 module.exports = {
   entry: path.resolve(__dirname, 'client', 'index.tsx'),
@@ -31,4 +32,5 @@ module.exports = {
       }
     ],
   },
+  plugins: [plugins.manifest, plugins.serviceWorker]
 }

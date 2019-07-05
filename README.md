@@ -6,14 +6,19 @@ First, this is no longer a sales pitch. In the old version of LudwigThePig, a lo
 
 The website will still display all of my projects, list my skills, and have ways to connect, but that is the focus will be on fun features and interesting projects.
 
-Second, this site is written in TypeScript! There is also a lot of other cool technology baked into this site (you can find a comprehensive list [below](#Technologies)). The intention is to build a platform that can expand easily, although, it may be the case that some of the technology is overkill. Surely this could have been build with pure HTML, CSS, and JavaScript.
+Second, this site is written in TypeScript! There is a lot of cool technology baked into this site (you can find a comprehensive list [below](#Technologies)). The intention is to build a platform that can expand easily, although, it may be the case that some of the technology is overkill for this application. Surely this could have been build with pure HTML, CSS, and JavaScript.
 
 **[Link to LudwigThePig 1.0](https://github.com/LudwigThePig/ludwigThePig.com)**
+
+## Features
+- This app is a Progressive Web Application (PWA). 
+- The app is mobile responsive, although some of the projects may not be 
 
 ## Technologies
 - TypeScript
 - React
 - Redux
 - ReactRouter
+- Service Workers
 - Node.js
 - Express

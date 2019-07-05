@@ -17,11 +17,11 @@ __Sections__
 ////////////////
 
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700,900&display=swap');
-$black: #001011;
-$white: #fff;
-$orange: #c97c5d;
-$grey: #AEB7B3;
 
+$black: #001011;
+$white: #F2F2E6;
+$orange: #ED6767;
+$purple: #793F5C;
 
 //////////////
 // 2. HTML //
@@ -61,7 +61,7 @@ a {
   color: $white;
   text-decoration: none;
   text-emphasis: none;
-  color: $orange;
+  color: $purple;
 }
 
 a:hover {
@@ -73,12 +73,12 @@ a:hover {
 //////////////////
 
 .active {
-  color: $grey;
+  color: $orange;
 }
 
 .fa {
   text-align: center;
-  background: $grey;
+  background: $purple;
   color: $orange;
   padding: 4px;
   margin: 5px 2px;
