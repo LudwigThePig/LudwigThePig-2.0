@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Navbar from './navabar'
+import Footer from './footer';
 // import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 interface IAppProps {
@@ -20,6 +21,7 @@ export default class App extends React.Component <IAppProps, IAppState> {
           <h1>Welcome to<br/>LudwigThePig</h1>
         </div>
           <Navbar />
+          <Footer />
       </div>
     )
   }
