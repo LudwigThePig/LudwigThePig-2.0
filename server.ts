@@ -7,7 +7,7 @@ const app = express();
 
 app.use(express.static(path.resolve(__dirname, 'bin')));
 
-app.listen(port, err => err 
+app.listen(port, (err:Error) => err 
   ? console.error(err)
   : console.log(`Server listening on port ${port}`)
 );
