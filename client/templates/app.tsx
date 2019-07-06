@@ -26,16 +26,16 @@ export default class App extends React.Component <IAppProps, IAppState> {
   render() {
     return (
       <Router>
-
-      <div className="app">
-        <div className="jumbo">
-          <Route component={Home} />
-          {/* <h1 className="logo">This is not<br/>a homepage</h1> */}
-        </div>
+        <div className="app">
+          <div className="jumbo">
+            <Route exact path="/" component={Home} />
+            <Route path="/about" component={About} />
+            <Route path="/projects" component={Projects} />
+          </div>
+          
           <Navbar />
           <Footer />
-      </div>
-      
+        </div>
       </Router>
     )
   }
