@@ -1,5 +1,6 @@
 const path = require('path');
 const plugins = require('./webpack.plugin');
+const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
   entry: path.resolve(__dirname, 'client', 'index.tsx'),
