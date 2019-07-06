@@ -29,7 +29,7 @@ export default class App extends React.Component <IAppProps, IAppState> {
         <div className="app">
           <div className="jumbo">
             <Route exact path="/" component={Home} />
-            <Route path="/about" component={About} />
+            <Route exact path="/about" component={About} />
             <Route path="/projects" component={Projects} />
           </div>
           
