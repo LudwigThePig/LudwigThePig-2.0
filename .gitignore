@@ -6,5 +6,4 @@ package-lock.json
 
 /bin/assets
 
-
-server.js
+serverBundle.js

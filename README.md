@@ -12,7 +12,8 @@ Second, this site is written in TypeScript! There is a lot of cool technology ba
 
 ## Features
 - This app is a Progressive Web Application (PWA). 
-- The app is mobile responsive, although some of the projects may not be 
+- The app is mobile responsive, although some of the projects may not be.
+- Isomorphic application with react-router-dom! In a sense, I recreated the magic of Next.js. Cool huh!?
 
 ## Technologies
 - TypeScript

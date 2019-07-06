@@ -13,24 +13,27 @@ module.exports = {
   },
   module: {
     rules: [
-        {
-            test: /\.ts(x?)$/,
-            exclude: /node_modules/,
-            use: [
-                {
-                    loader: "ts-loader"
-                }
-            ]
-        },
-        {
-            enforce: "pre",
-            test: /\.js$/,
-            loader: "source-map-loader"
-        },
+      {
+        test: /\.ts(x?)$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: "babel-loader"
+          },
+          {
+            loader: "ts-loader"
+          }
+        ]
+      },
+      {
+        enforce: "pre",
+        test: /\.js$/,
+        loader: "source-map-loader"
+      },
       {
         test: /\.(s*)css$/,
         use: ['style-loader', 'css-modules-typescript-loader', 'css-loader', 'sass-loader'],
-      }
+      },
     ],
   },
   plugins: [plugins.manifest, plugins.serviceWorker, plugins.copy]

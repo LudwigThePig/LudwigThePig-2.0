@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack -d --watch",
-    "compile": "tsc server.ts && node server.js",
-    "start": "nodemon -e ts  --exec \"npm run compile\"",
+    "build": "webpack --config webpack.config.js -d -w",
+    "dev:compile": "webpack --config webpack.server.js -d -w",
+    "dev:start": "nodemon serverBundle.js",
+    "start": "npm-run-all --parallel dev:*",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -43,6 +44,7 @@
     "copy-webpack-plugin": "^5.0.3",
     "css-loader": "^3.0.0",
     "html-webpack-plugin": "^3.2.0",
+    "ignore-loader": "^0.1.2",
     "node-sass": "^4.12.0",
     "nodemon": "^1.19.1",
     "npm-run-all": "^4.1.5",
