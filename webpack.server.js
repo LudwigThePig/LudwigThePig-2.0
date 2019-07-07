@@ -5,10 +5,10 @@ const nodeExternals = require('webpack-node-externals');
 // https://alligator.io/react/react-router-ssr/
 
 module.exports = {
-  entry: path.resolve(__dirname, 'server.ts'),
+  mode: 'development',
+  entry: path.resolve(__dirname, 'server.tsx'),
 
   target: 'node',
-
   externals: [nodeExternals()],
 
   output: {
@@ -23,20 +23,11 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
-        use: 'babel-loader'
-      },
-      {
         test: /\.ts(x?)$/,
         exclude: /node_modules/,
-        use: [
-          // {
-          //   loader: 'babel-loader'
-          // },
-          {
-            loader: "ts-loader"
-          }
-        ]
+        use: "ts-loader",
+        exclude: /node_modules/
+
       },
       { 
         test: /\.scss$/, 

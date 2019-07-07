@@ -16,12 +16,12 @@ import { Response, Request, NextFunction } from 'express';
 
 app.use(express.static(path.resolve(__dirname, 'bin')));
 
-app.get('/*', (req: Request, res: Response) => {
+app.get('/*', (req: Request, res: Response): void => {
   const context = {};
-  const app = ReactDOMServer.renderToString(React.createElement(App)
-  // <StaticRouter location={req.url} context={context}>
-  //   <App />
-  // </StaticRouter>
+  const app = ReactDOMServer.renderToString( // React.createElement(App)
+  <StaticRouter location='/' context={context}>
+    <App compiler="TypeScript" framework="React" />
+  </StaticRouter>
   );
   console.log(app)
   res.send(app)
