@@ -1,12 +1,13 @@
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import rootReducer from './reducers/root.js';
-import { State } from './types/main.js';
+import rootReducer, { AppState } from './reducers/root.js';
 
-const initial:State = {
-  activeNav : 'home',
+export const initialState:AppState = {
+  nav: {
+    activeNav : 'home'
+  },
 }
 
-const store = createStore(rootReducer, initial, applyMiddleware(thunk));
+const store = createStore(rootReducer, initialState, applyMiddleware(thunk));
 
 export default store;
