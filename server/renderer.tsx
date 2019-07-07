@@ -3,12 +3,12 @@ import * as ReactDOMServer from 'react-dom/server';
 import App from '../client/templates/app';
 import { StaticRouter } from 'react-router-dom';
 
+export default function renderer(html: string, url:string): string {  
 
-export default function renderer(html: string): string {
   const context = {};
-
+  console.log('befot')
   const app = ReactDOMServer.renderToString(
-    <StaticRouter location='/' context={context}>
+    <StaticRouter location={url} context={context} >
       <App compiler="TypeScript" framework="React" />
     </StaticRouter>
   );
@@ -18,6 +18,6 @@ export default function renderer(html: string): string {
   html = html.replace(regex, function(original, div1, div2) {
       return div1 + app + div2;
   });
-
+  console.log(html)
   return html;
 }

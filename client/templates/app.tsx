@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { createMemoryHistory } from 'history';
 
 
 // Templates
@@ -18,19 +19,23 @@ interface IAppProps {
 }
 
 interface IAppState {
-
+  
 }
 
 export default class App extends React.Component <IAppProps, IAppState> {
-
+  
   render() {
+    const history = createMemoryHistory();
+    
     return (
-      <Router>
+      <Router history={history}>
         <div className="app">
           <div className="jumbo">
-            <Route exact path="/" component={Home} />
-            <Route exact path="/about" component={About} />
-            <Route path="/projects" component={Projects} />
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/about" component={About} />
+              <Route path="/projects" component={Projects} />
+            </Switch>
           </div>
           
           <Navbar />

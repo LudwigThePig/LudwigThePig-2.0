@@ -6,9 +6,6 @@ const fs = require('fs');
 const port = process.env.PORT
 
 // Crazy SSR Routing!
-import * as React from 'react';
-import * as ReactDOMServer from 'react-dom/server';
-import App from '../client/templates/app';
 import renderer from './renderer';
 
 
@@ -19,11 +16,11 @@ app.use(express.static(path.resolve(__dirname, 'bin')));
 
 app.get('/*', (req: Request, res: Response): void => {
 
-  const htmlPath = path.resolve(__dirname, 'bin', 'index.html');
-  fs.readFile(htmlPath, 'utf-8', (err:any, file:any)=> {
-    res.send(renderer(file));
+  const htmlPath = path.join(__dirname, 'bin', 'index.html');
+  fs.readFile('./bin/index.html', 'utf-8', (err:any, file:any)=> {
+    // console.log(file, htmlPath )
+    res.send(renderer(file, req.url));
   })
-  // res.send(app)
 });
 
 app.listen(port, (err: Error) => err 
