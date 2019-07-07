@@ -1,12 +1,5 @@
-export const ACTIVE_NAV = 'ACTIVE_NAV'
+import { navPayload } from "./navTypes";
 
-export type navPayload = 'home' | 'about' | 'projects';
-
-export interface NavAction {
-  type: typeof ACTIVE_NAV
-  payload: navPayload
-
-}
 
 export interface State {
   activeNav: navPayload;
