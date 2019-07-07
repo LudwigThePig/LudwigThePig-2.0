@@ -6,16 +6,17 @@ const port = process.env.PORT
 
 // Crazy SSR Routing!
 import React from 'react';
-import ReactDOMServer from 'react-dom/server';
+import * as ReactDOMServer from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
-import App from './client/index';
+import App from './client/templates/app';
 
 
 const app = express();
+import { Response, Request, NextFunction } from 'express';
 
 app.use(express.static(path.resolve(__dirname, 'bin')));
 
-app.get('*', (req, res) => {
+app.get('/*', (req: any, res: any) => {
   const context = {};
   const app = ReactDOMServer.renderToString(
     <StaticRouter location={req.url} context={context}>
@@ -24,7 +25,7 @@ app.get('*', (req, res) => {
   );
 });
 
-app.listen(port, (err) => err 
+app.listen(port, (err: Error) => err 
   ? console.error(err)
   : console.log(`Server listening on port ${port}`)
 );
