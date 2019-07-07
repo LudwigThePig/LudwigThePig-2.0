@@ -1,4 +1,3 @@
-import Redux from 'redux';
 import { NavAction, ACTIVE_NAV, navPayload } from '../types/navTypes';
 import { State } from '../types/main';
 

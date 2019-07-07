@@ -5,7 +5,7 @@ const path = require('path');
 const port = process.env.PORT
 
 // Crazy SSR Routing!
-import React from 'react';
+import * as React from 'react';
 import * as ReactDOMServer from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
 import App from './client/templates/app';
@@ -16,7 +16,7 @@ import { Response, Request, NextFunction } from 'express';
 
 app.use(express.static(path.resolve(__dirname, 'bin')));
 
-app.get('/*', (req: any, res: any) => {
+app.get('/*', (req: Request, res: Response) => {
   const context = {};
   const app = ReactDOMServer.renderToString(React.createElement(App)
   // <StaticRouter location={req.url} context={context}>
