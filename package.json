@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --config webpack.config.js -d -w",
-    "dev:compile": "webpack --config webpack.server.js -d -w",
+    "dev:compile": "webpack --config webpack.server.js -d --watch",
     "dev:start": "nodemon serverBundle.js",
     "start": "npm-run-all --parallel dev:*",
     "test": "echo \"Error: no test specified\" && exit 1"

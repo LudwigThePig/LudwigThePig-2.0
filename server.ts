@@ -18,11 +18,13 @@ app.use(express.static(path.resolve(__dirname, 'bin')));
 
 app.get('/*', (req: any, res: any) => {
   const context = {};
-  const app = ReactDOMServer.renderToString(
-    <StaticRouter location={req.url} context={context}>
-      <App />
-    </StaticRouter>
+  const app = ReactDOMServer.renderToString(React.createElement(App)
+  // <StaticRouter location={req.url} context={context}>
+  //   <App />
+  // </StaticRouter>
   );
+  console.log(app)
+  res.send(app)
 });
 
 app.listen(port, (err: Error) => err 

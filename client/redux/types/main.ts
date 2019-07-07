@@ -1,7 +1,13 @@
-import { string } from "prop-types";
+export const ACTIVE_NAV = 'ACTIVE_NAV'
 
-export type activeNav = 'home' | 'about' | 'projects';
+export type navPayload = 'home' | 'about' | 'projects';
+
+export interface NavAction {
+  type: typeof ACTIVE_NAV
+  payload: navPayload
+
+}
 
 export interface State {
-  activeNav: activeNav;
+  activeNav: navPayload;
 }

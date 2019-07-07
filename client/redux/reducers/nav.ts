@@ -1,12 +1,10 @@
-import Redux, { Action } from 'redux';
-import { activeNav } from '../types/main';
+import Redux from 'redux';
+import { NavAction, ACTIVE_NAV } from '../types/main';
 
-const activeNav = 'ACTIVE_NAV'
-
-const navReducer = (state = 'home', action:Action) => {
+const navReducer = (state = 'home', action:NavAction) => {
   switch(action.type) {
-    case activeNav:
-      return action.message || 'home';
+    case ACTIVE_NAV:
+      return action.payload || 'home';
     default:
       return state;
   }
