@@ -18,10 +18,14 @@ __Sections__
 
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700,900&display=swap');
  
-$black: #001011;
-$white: #F2F2E6;
-$orange: #ED6767;
-$purple: #793F5C;
+
+// Dark Theme, or 'dt'
+$DT-black: #001011;
+$DT-white: #F2F2E6;
+$DT-orange: #ED6767;
+$DT-purple: #793F5C;
+
+
 
 //////////////
 // 2. HTML //
@@ -35,8 +39,8 @@ html {
 body {
   margin: 0;
   font-family: 'Nunito', sans-serif;
-  background: $black;
-  color: $white;
+  background: $DT-black;
+  color: $DT-white;
 }
 
 h1 {
@@ -58,14 +62,14 @@ p {
 }
 
 a {
-  color: $white;
+  color: $DT-white;
   text-decoration: none;
   text-emphasis: none;
-  color: $purple;
+  color: $DT-purple;
 }
 
 a:hover {
-  color: $white;
+  color: $DT-white;
 }
 
 //////////////////
@@ -73,20 +77,20 @@ a:hover {
 //////////////////
 
 .active {
-  color: $orange;
+  color: $DT-orange;
 }
 
 .fa {
   text-align: center;
-  background: $purple;
-  color: $orange;
+  color: $DT-orange;
   padding: 4px;
   margin: 5px 2px;
   font-size: 4rem;
   width: 80px;
+  height: 80px;
 }
 .fa:hover {
-  background: $white;
+  color: $DT-white;
   cursor: pointer;
 }
 
