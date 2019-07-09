@@ -12,11 +12,16 @@ export default function renderer(html: string, css:string, url:string): string {
     </StaticRouter>
       );
 
-  const regex = /(<div id="root">)(<\/div>)/;
+  const divRegex = /(<div id="root">)(<\/div>)/;
+  const styleRegex = /(<style>)(<\/style>)/;
 
-  html = html.replace(regex, function(original, div1, div2) {
+  html = html.replace(divRegex, (original, div1, div2): string => {
       return div1 + app + div2;
   });
+  
+  html = html.replace(styleRegex, (original, div1:string, div2:string): string => {
+    return div1 + css + div2;
+});
   console.log(html)
   return html;
 }
