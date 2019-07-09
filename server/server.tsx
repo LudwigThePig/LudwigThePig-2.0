@@ -11,9 +11,7 @@ import renderer from './renderer';
 const app = express();
 import { Response, Request, NextFunction } from 'express';
 
-app.use(express.static(path.resolve(__dirname, 'bin')));
-
-app.get('/static', express.static(path.resolve(__dirname, 'bin')))
+app.use('/static', express.static('bin'))
 
 app.get('/*', (req: Request, res: Response): void => {
   fs.readFile('./bin/main.css', 'utf-8', (cssErr:any, css:any)=> {
