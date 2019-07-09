@@ -20,13 +20,21 @@ __Sections__
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700,900&display=swap');
  
 
-// Dark Theme, or 'dt'
+// Dark Theme, or 'DT'
 $DT-black: #001011;
 $DT-white: #F2F2E6;
 $DT-orange: #ED6767;
 $DT-purple: #793F5C;
 
-// Blue Theme, or 'bt' 
+// Light theme, or 'LT'
+$LT-black: #342e37;
+$LT-white: #f1e5d6;
+$LT-orange: #e57853; 
+$LT-red: #A43A4B;
+
+
+
+// Blue Theme, or 'BT'
 $BT-black: #1e1e2c;;
 $BT-dark-blue: #2D2D44;
 $BT-blue: #33E1ED;
@@ -37,7 +45,6 @@ $BT-white: #fff;
 //////////////
 // 3. HTML //
 /////////////
-
 
 html {
   font-size: 10px;
@@ -136,6 +143,31 @@ a:hover {
   }
 }
 
+// Light Theme Application
+.app-light {
+  background: $LT-white;
+  color: $LT-black;
+  a {
+    color: $LT-red;
+  }
+  
+  .active {
+    color: $LT-orange;
+  }
+  .fa {
+    color: $LT-red;
+  }
+  .fa:hover {
+    color: $LT-orange;
+    cursor: pointer;
+  }
+  a:hover {
+    color: $LT-black;
+  }
+}
+
+
+// Blue Theme Application
 .app-blue {
   background: $BT-black;
   color: $BT-white;
