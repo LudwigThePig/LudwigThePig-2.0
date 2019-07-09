@@ -16,9 +16,16 @@ app.use(express.static(path.resolve(__dirname, 'bin')));
 app.get('/static', express.static(path.resolve(__dirname, 'bin')))
 
 app.get('/*', (req: Request, res: Response): void => {
-  const htmlPath = path.join(__dirname, 'bin', 'index.html');
   fs.readFile('./bin/main.css', 'utf-8', (cssErr:any, css:any)=> {
     fs.readFile('./bin/index.html', 'utf-8', (htmlErr:any, html:any)=> {
+      
+      if (cssErr || htmlErr) {
+        const errRes = [cssErr, htmlErr]
+          .filter(err => err !== undefined)
+          .join('\n');
+        res.send(errRes)
+      }
+
       res.send( renderer(html, css, req.url) );
     })
   });

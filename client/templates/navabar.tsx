@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 
 const NavBar = () => (
   <nav className="navbar">
-    <Link className="active" to='/'>LtP</Link>
-    <Link to='/about'>about</Link>
-    <Link to='/projects'>projects</Link>
+    <NavLink activeClassName="active" to='/'>LtP</NavLink>
+    <NavLink activeClassName="active" to='/about'>about</NavLink>
+    <NavLink activeClassName="active" to='/projects'>projects</NavLink>
   </nav>
 )
 

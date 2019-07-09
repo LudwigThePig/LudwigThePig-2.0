@@ -147,22 +147,26 @@ a:hover {
 .app-light {
   background: $LT-white;
   color: $LT-black;
+  
   a {
     color: $LT-red;
+  }
+
+  a:hover {
+    color: $LT-orange;
   }
   
   .active {
     color: $LT-orange;
   }
+
   .fa {
     color: $LT-red;
   }
+  
   .fa:hover {
     color: $LT-orange;
     cursor: pointer;
-  }
-  a:hover {
-    color: $LT-black;
   }
 }
 

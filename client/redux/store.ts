@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import rootReducer, { AppState } from './reducers/root.js';
+import rootReducer, { AppState } from './reducers/root';
 
 export const initialState:AppState = {
   nav: {

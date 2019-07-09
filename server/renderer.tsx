@@ -1,15 +1,19 @@
 import * as React from 'react';
 import * as ReactDOMServer from 'react-dom/server';
-import App from '../client/templates/app';
 import { StaticRouter } from 'react-router-dom';
+import App from '../client/templates/app';
+import { Provider } from 'react-redux';
+import store from '../client/redux/store';
 
 export default function renderer(html: string, css:string, url:string): string {  
 
   const context = {};
   const app = ReactDOMServer.renderToString(
-    <StaticRouter location={url} context={context} >
-      <App compiler="TypeScript" framework="React" />
-    </StaticRouter>
+    <Provider store={store}>
+      <StaticRouter location={url} context={context} >
+        <App compiler="TypeScript" framework="React" />
+      </StaticRouter>
+    </Provider>
       );
 
   const divRegex = /(<div id="root">)(<\/div>)/;

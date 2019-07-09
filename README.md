@@ -23,3 +23,6 @@ Second, this site is written in TypeScript! There is a lot of cool technology ba
 - Service Workers
 - Node.js
 - Express
+
+## Styling
+The style sheet was written with Sass. There are three themes, dark, light, and blue. All color palletes are courtesy of [@awsmcolors](https://www.instagram.com/awsmcolor/) on instagram.
