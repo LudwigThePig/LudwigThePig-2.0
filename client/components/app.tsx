@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-import { createMemoryHistory } from 'history';
 
 // Templates
 import Navbar from './navabar'
@@ -11,6 +10,10 @@ import Home from '../pages/home';
 import About from '../pages/about';
 import Projects from '../pages/projects';
 
+// Redux
+import store from '../redux/store';
+import { themePayload } from '../redux/types/themeTypes';
+
 
 interface IAppProps {
   compiler: string;
@@ -19,16 +22,30 @@ interface IAppProps {
 }
 
 interface IAppState {
-  
+  theme?: themePayload
 }
 
 export default class App extends React.Component <IAppProps, IAppState> {
   
+  constructor(props: IAppProps){
+    super(props);
+    this.state = {
+      theme: store.getState().theme.activeTheme
+    }
+  }
+
+  componentDidMount() {
+    store.subscribe(() => {
+      this.setState({
+        theme: store.getState().theme.activeTheme
+      });
+    });
+  }
+
   public render(): JSX.Element {
-    const history = createMemoryHistory();
-    
+    const { theme } = this.state;
     return (
-      <div className="theme-blue">
+      <div className={`theme-${theme}`}>
         <div id="app">
           <div className="jumbo">
             <Switch>

@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
 import nav from './navReducer';
+import theme from './themeReducer'
 
 const rootReducer = combineReducers({
-  nav
+  nav,
+  theme
 });
 
 export default rootReducer;

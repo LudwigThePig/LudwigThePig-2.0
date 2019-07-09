@@ -4,8 +4,11 @@ import rootReducer, { AppState } from './reducers/root';
 
 export const initialState:AppState = {
   nav: {
-    activeNav : 'home'
+    activeNav : 'home',
   },
+  theme: {
+    activeTheme: 'light'
+  }
 }
 
 const store = createStore(rootReducer, initialState, applyMiddleware(thunk));
