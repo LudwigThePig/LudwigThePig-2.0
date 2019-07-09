@@ -7,7 +7,8 @@
     "build": "webpack --config webpack.config.js -d -w",
     "dev:compile": "webpack --config webpack.server.js -d --watch",
     "dev:start": "nodemon serverBundle.js",
-    "start": "npm-run-all --parallel dev:compile dev:start",
+    "dev:css" : "node-sass -w client -o bin",
+    "start": "npm-run-all --parallel dev:*",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
