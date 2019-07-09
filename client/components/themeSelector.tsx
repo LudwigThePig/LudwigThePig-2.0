@@ -22,27 +22,47 @@ class ThemeSelector extends React.Component <{}, IThemeSelectorState>{
   }
 
   handleChange(e: React.FormEvent<HTMLInputElement>) {
-    console.log('hello')
-    const theme = 'blue';
+    const theme = e.target.value;
     store.dispatch(updateNav(theme));
   } 
 
   render() {
-    
+    const { theme } = this.state;
     return (
-        <ul >
+        <ul>
           <li>
-            <input type="radio" checked name="theme-opt" onClick={this.handleChange} onChange={this.handleChange} value="dark" />
+            <input 
+              type="radio" 
+              checked={theme === 'dark'}
+              name="theme-opt" 
+              onChange={this.handleChange}
+              onClick={this.handleChange} 
+              value="dark" 
+              />
             <label><span role="img" aria-label="dark-theme">🌚</span></label>
           </li>
           
           <li>
-            <input type="radio" name="theme-opt" value="light" />
+            <input 
+              type="radio" 
+              checked={theme === 'light'}
+              name="theme-opt" 
+              onChange={this.handleChange}
+              onClick={this.handleChange} 
+              value="light" 
+            />
             <label><span role="img" aria-label="light-theme">🌞</span></label>
           </li>
           
           <li>
-            <input type="radio" name="theme-opt" value="dark" />
+            <input 
+              type="radio" 
+              checked={theme === 'blue'}
+              name="theme-opt" 
+              onChange={this.handleChange}
+              onClick={this.handleChange} 
+              value="blue" 
+              />
             <label><span role="img" aria-label="blue-theme">🌊</span></label>
           </li>
         </ul>
