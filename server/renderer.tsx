@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDOMServer from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
-import App from '../client/templates/app';
+import App from '../client/components/app';
 import { Provider } from 'react-redux';
 import store from '../client/redux/store';
 
