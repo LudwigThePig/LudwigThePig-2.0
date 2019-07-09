@@ -20,8 +20,8 @@ __Sections__
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700,900&display=swap');
  
 
-////////////////
-// 3. THEMES //
+////////////////      Thanks to Dmitry Borody for his awesome guide on mixins
+// 3. THEMES //       https://medium.com/@dmitriy.borodiy/easy-color-theming-with-scss-bc38fd5734d1
 ///////////////
 
 $themes: (
@@ -40,8 +40,8 @@ $themes: (
   blue: (
     primary: #1e1e2c,
     secondary: #fff,
-    active-color: #2D2D44,
-    alt-color: #33E1ED,
+    active-color: #33E1ED,
+    alt-color: #2D2D44,
   ),
 );
 
@@ -113,14 +113,9 @@ a:hover {
 // 4. Modifiers //
 //////////////////
 
-.active {
-  color: $DT-orange;
-}
-
 
 .fa {
   text-align: center;
-  color: $DT-orange;
   padding: 4px;
   margin: 5px 2px;
   font-size: 4rem;
@@ -189,16 +184,24 @@ a:hover {
 .navbar {
 
   ul {
+
+    @include getTheme($themes) {
+      background: themed('alt-color');  
+    }
+
     list-style-type:none;
     margin: 0;
     padding:0;
     border-radius: 5px;
     li {
-      padding: 0;
+      float: left;
+      padding: 3;
       label {
-        background: white; 
+        @include getTheme($themes) {
+          background: themed('alt-color');  
+        }
+        font-size: 2rem;
         padding: 6px;
-        border: 1px solid #ccc;
         display: inline-block;
       }
       input[type="radio"] {
@@ -207,8 +210,9 @@ a:hover {
         height:1px;
       }
       input[type="radio"]:checked ~ label {
-        background: red;
-        color: white;
+        @include getTheme($themes) {
+          background: themed('active-color');  
+        }
       }
     }
   }

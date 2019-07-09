@@ -28,7 +28,7 @@ export default class App extends React.Component <IAppProps, IAppState> {
     const history = createMemoryHistory();
     
     return (
-      <div className="theme-light">
+      <div className="theme-blue">
         <div id="app">
           <div className="jumbo">
             <Switch>
