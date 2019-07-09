@@ -3,7 +3,7 @@ import * as React from 'react';
 const ThemeSelector = () => (
   <ul>
     <li>
-      <input type="radio" checked name="theme-opt" value="dark" />
+      <input type="radio" checked onChange={()=>{}} name="theme-opt" value="dark" />
       <label><span role="img" aria-label="dark-theme">🌚</span></label>
     </li>
 

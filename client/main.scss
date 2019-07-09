@@ -20,27 +20,49 @@ __Sections__
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700,900&display=swap');
  
 
-// Dark Theme, or 'DT'
-$DT-black: #001011;
-$DT-white: #F2F2E6;
-$DT-orange: #ED6767;
-$DT-purple: #793F5C;
+////////////////
+// 3. THEMES //
+///////////////
 
-// Light theme, or 'LT'
-$LT-black: #342e37;
-$LT-white: #f1e5d6;
-$LT-orange: #e57853; 
-$LT-red: #A43A4B;
+$themes: (
+  light: (
+    primary: #f1e5d6,
+    secondary: #342e37,
+    active-color: #e57853, 
+    alt-color: #A43A4B,
+  ),
+  dark: (
+    primary: #001011,
+    secondary: #F2F2E6,
+    active-color: #ED6767,
+    alt-color: #793F5C,
+  ),
+  blue: (
+    primary: #1e1e2c,
+    secondary: #fff,
+    active-color: #2D2D44,
+    alt-color: #33E1ED,
+  ),
+);
 
+@mixin getTheme($themes: $themes) {
+  @each $theme, $map in $themes {
 
+    .theme-#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
 
-// Blue Theme, or 'BT'
-$BT-black: #1e1e2c;;
-$BT-dark-blue: #2D2D44;
-$BT-blue: #33E1ED;
-$BT-white: #fff;
-
-
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}
 
 //////////////
 // 3. HTML //
@@ -76,11 +98,15 @@ p {
 a {
   text-decoration: none;
   text-emphasis: none;
-  color: $DT-purple;
+  @include getTheme($themes) {
+    color: themed('alt-color');  
+  }
 }
 
 a:hover {
-  color: $DT-white;
+  @include getTheme($themes) {
+    color: themed('active-color');  
+  }
 }
 
 //////////////////
@@ -107,7 +133,7 @@ a:hover {
 // 5. Components //
 ///////////////////
 
-.app {
+#app {
   // Grid settings for desktop
   display: grid;
   grid-template-columns: 1.7fr 0.3fr;
@@ -116,84 +142,35 @@ a:hover {
   height: 100vh;
   width: 100vw;
   position: fixed;
-  background: $DT-black;
-  color: $DT-white;
-}
-
-// Dark Theme Application
-.app-dark {
-  background: $DT-black;
-  color: $DT-white;
-  a {
-    color: $DT-purple;
+  
+  @include getTheme($themes) {
+    color: themed('secondary');  
+    background-color: themed('primary');  
   }
+}
   
   .active {
-    color: $DT-orange;
+    @include getTheme($themes) {
+      color: themed('active-color');  
+    }
   }
+  
   .fa {
-    color: $DT-orange;
+    @include getTheme($themes) {
+      color: themed('active-color');  
+    }
   }
   .fa:hover {
-    color: $DT-white;
+    @include getTheme($themes) {
+      color: themed('secondary');  
+    }
     cursor: pointer;
   }
   a:hover {
-    color: $DT-white;
+    @include getTheme($themes) {
+      color: themed('secondary');  
+    }
   }
-}
-
-// Light Theme Application
-.app-light {
-  background: $LT-white;
-  color: $LT-black;
-  
-  a {
-    color: $LT-red;
-  }
-
-  a:hover {
-    color: $LT-orange;
-  }
-  
-  .active {
-    color: $LT-orange;
-  }
-
-  .fa {
-    color: $LT-red;
-  } 
-
-  .fa:hover {
-    color: $LT-orange;
-    cursor: pointer;
-  }
-}
-
-
-// Blue Theme Application
-.app-blue {
-  background: $BT-black;
-  color: $BT-white;
-  a {
-    color: $BT-dark-blue;
-  }
-  a:hover {
-    color: $BT-white;
-  }
-  
-  .active {
-    color: $BT-blue;
-  }
-  .fa {
-    color: $BT-blue;
-  }
-  .fa:hover {
-    color: $BT-white;
-    cursor: pointer;
-  }
-
-}
   
 .jumbo {
   grid-area: jumbo;

@@ -28,7 +28,8 @@ export default class App extends React.Component <IAppProps, IAppState> {
     const history = createMemoryHistory();
     
     return (
-        <div className="app app-light">
+      <div className="theme-light">
+        <div id="app">
           <div className="jumbo">
             <Switch>
               <Route exact path="/" component={Home} />
@@ -40,6 +41,7 @@ export default class App extends React.Component <IAppProps, IAppState> {
           <Navbar />
           <Footer />
         </div>
+      </div>
     )
   }
 }
