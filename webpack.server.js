@@ -31,7 +31,7 @@ module.exports = {
       },
       { 
         test: /\.scss$/, 
-        loader: 'ignore-loader'
+        use: ['style-loader', 'css-modules-typescript-loader', 'css-loader', 'sass-loader'],
       }
     ]
   }

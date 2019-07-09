@@ -2,15 +2,14 @@ import * as React from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import { createMemoryHistory } from 'history';
 
-
 // Templates
 import Navbar from './navabar'
 import Footer from './footer';
 
 // Components
-import Home from '../components/home';
-import About from '../components/about';
-import Projects from '../components/projects';
+import Home from '../pages/home';
+import About from '../pages/about';
+import Projects from '../pages/projects';
 
 
 interface IAppProps {
@@ -29,7 +28,6 @@ export default class App extends React.Component <IAppProps, IAppState> {
     const history = createMemoryHistory();
     
     return (
-      // <Router {...history}>
         <div className="app">
           <div className="jumbo">
             <Switch>
@@ -42,7 +40,6 @@ export default class App extends React.Component <IAppProps, IAppState> {
           <Navbar />
           <Footer />
         </div>
-      // </Router>
     )
   }
 }
