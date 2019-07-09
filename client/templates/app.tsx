@@ -16,6 +16,7 @@ import Projects from '../components/projects';
 interface IAppProps {
   compiler: string;
   framework: string;
+  staticContext?: any;
 }
 
 interface IAppState {
@@ -24,16 +25,16 @@ interface IAppState {
 
 export default class App extends React.Component <IAppProps, IAppState> {
   
-  render() {
+  public render(): JSX.Element {
     const history = createMemoryHistory();
     
     return (
-      <Router history={history}>
+      // <Router {...history}>
         <div className="app">
           <div className="jumbo">
             <Switch>
               <Route exact path="/" component={Home} />
-              <Route exact path="/about" component={About} />
+              <Route path="/about" component={About} />
               <Route path="/projects" component={Projects} />
             </Switch>
           </div>
@@ -41,7 +42,7 @@ export default class App extends React.Component <IAppProps, IAppState> {
           <Navbar />
           <Footer />
         </div>
-      </Router>
+      // </Router>
     )
   }
 }

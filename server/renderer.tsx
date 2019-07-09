@@ -6,12 +6,11 @@ import { StaticRouter } from 'react-router-dom';
 export default function renderer(html: string, url:string): string {  
 
   const context = {};
-  console.log('befot')
   const app = ReactDOMServer.renderToString(
     <StaticRouter location={url} context={context} >
       <App compiler="TypeScript" framework="React" />
     </StaticRouter>
-  );
+      );
 
   const regex = /(<div id="root">)(<\/div>)/;
 

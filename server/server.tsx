@@ -8,12 +8,13 @@ const port = process.env.PORT
 // Crazy SSR Routing!
 import renderer from './renderer';
 
-
 const app = express();
 import { Response, Request, NextFunction } from 'express';
 
 app.use(express.static(path.resolve(__dirname, 'bin')));
 
+
+// app.get('/', express.static(path.resolve(__dirname, 'bin')))
 app.get('/*', (req: Request, res: Response): void => {
 
   const htmlPath = path.join(__dirname, 'bin', 'index.html');
