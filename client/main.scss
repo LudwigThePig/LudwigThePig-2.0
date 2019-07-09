@@ -4,10 +4,11 @@
 
 __Sections__
 1. Imports
-2. HTML Base Styling
-3. Modifiers
-4. Component Styles
-5. Animations
+2. Themes
+3. HTML Base Styling
+4. Modifiers
+5. Component Styles
+6. Animations
 
 
 /*************************************************************
@@ -25,10 +26,16 @@ $DT-white: #F2F2E6;
 $DT-orange: #ED6767;
 $DT-purple: #793F5C;
 
+// Blue Theme, or 'bt' 
+$BT-black: #1e1e2c;;
+$BT-dark-blue: #2D2D44;
+$BT-blue: #33E1ED;
+$BT-white: #fff;
+
 
 
 //////////////
-// 2. HTML //
+// 3. HTML //
 /////////////
 
 
@@ -39,8 +46,6 @@ html {
 body {
   margin: 0;
   font-family: 'Nunito', sans-serif;
-  background: $DT-black;
-  color: $DT-white;
 }
 
 h1 {
@@ -62,7 +67,6 @@ p {
 }
 
 a {
-  color: $DT-white;
   text-decoration: none;
   text-emphasis: none;
   color: $DT-purple;
@@ -73,12 +77,13 @@ a:hover {
 }
 
 //////////////////
-// 3. Modifiers //
+// 4. Modifiers //
 //////////////////
 
 .active {
   color: $DT-orange;
 }
+
 
 .fa {
   text-align: center;
@@ -89,13 +94,10 @@ a:hover {
   width: 80px;
   height: 80px;
 }
-.fa:hover {
-  color: $DT-white;
-  cursor: pointer;
-}
+
 
 ///////////////////
-// 4. Components //
+// 5. Components //
 ///////////////////
 
 .app {
@@ -107,6 +109,54 @@ a:hover {
   height: 100vh;
   width: 100vw;
   position: fixed;
+  background: $DT-black;
+  color: $DT-white;
+}
+
+// Dark Theme Application
+.app-dark {
+  background: $DT-black;
+  color: $DT-white;
+  a {
+    color: $DT-purple;
+  }
+  
+  .active {
+    color: $DT-orange;
+  }
+  .fa {
+    color: $DT-orange;
+  }
+  .fa:hover {
+    color: $DT-white;
+    cursor: pointer;
+  }
+  a:hover {
+    color: $DT-white;
+  }
+}
+
+.app-blue {
+  background: $BT-black;
+  color: $BT-white;
+  a {
+    color: $BT-dark-blue;
+  }
+  a:hover {
+    color: $BT-white;
+  }
+  
+  .active {
+    color: $BT-blue;
+  }
+  .fa {
+    color: $BT-blue;
+  }
+  .fa:hover {
+    color: $BT-white;
+    cursor: pointer;
+  }
+
 }
   
 .jumbo {
@@ -146,7 +196,7 @@ a:hover {
 
 
 ///////////////////
-// 5. Animations //
+// 6. Animations //
 ///////////////////
 
 // << JUMBO >> \\
