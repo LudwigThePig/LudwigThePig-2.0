@@ -3,7 +3,7 @@ import * as ReactDOMServer from 'react-dom/server';
 import App from '../client/templates/app';
 import { StaticRouter } from 'react-router-dom';
 
-export default function renderer(html: string, url:string): string {  
+export default function renderer(html: string, css:string, url:string): string {  
 
   const context = {};
   const app = ReactDOMServer.renderToString(

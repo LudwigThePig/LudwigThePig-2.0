@@ -18,10 +18,11 @@ app.use(express.static(path.resolve(__dirname, 'bin')));
 app.get('/*', (req: Request, res: Response): void => {
 
   const htmlPath = path.join(__dirname, 'bin', 'index.html');
-  fs.readFile('./bin/index.html', 'utf-8', (err:any, file:any)=> {
-    // console.log(file, htmlPath )
-    res.send(renderer(file, req.url));
-  })
+  fs.readFile('./bin/main.css', 'utf-8', (cssErr:any, css:any)=> {
+    fs.readFile('./bin/index.html', 'utf-8', (htmlErr:any, html:any)=> {
+      res.send(renderer(html, css, req.url));
+    })
+  });
 });
 
 app.listen(port, (err: Error) => err 

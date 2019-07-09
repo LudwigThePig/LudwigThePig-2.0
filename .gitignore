@@ -8,3 +8,4 @@ package-lock.json
 
 serverBundle.js
 server.js
+bin/main.css
