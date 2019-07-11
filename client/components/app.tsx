@@ -37,7 +37,8 @@ export default class App extends React.Component <IAppProps, IAppState> {
   componentDidMount() {
     store.subscribe(() => {
       this.setState({
-        theme: store.getState().theme.activeTheme
+        theme: store.getState().theme.activeTheme,
+        initial: store.getState().initialLoad.activeInitialLoad
       });
     });
   }

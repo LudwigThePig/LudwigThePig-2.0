@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux';
 import nav from './navReducer';
-import theme from './themeReducer'
+import theme from './themeReducer';
+import initialLoad from './initialLoadReducer';
 
 const rootReducer = combineReducers({
   nav,
-  theme
+  theme,
+  initialLoad
 });
 
 export default rootReducer;

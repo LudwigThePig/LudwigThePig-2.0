@@ -1,5 +1,4 @@
 import { NavAction, ACTIVE_NAV, navPayload } from '../types/navTypes';
-import { State } from '../types/main';
 
 interface NavState {
   activeNav: navPayload;

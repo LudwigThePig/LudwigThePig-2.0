@@ -8,6 +8,9 @@ export const initialState:AppState = {
   },
   theme: {
     activeTheme: 'light'
+  },
+  initialLoad: {
+    activeInitialLoad: true
   }
 }
 
