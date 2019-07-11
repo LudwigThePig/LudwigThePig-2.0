@@ -7,8 +7,8 @@ const NavBar = () => (
     <ThemeSelector />
     <nav>
       <NavLink activeClassName="active" exact={true} to='/'>LtP</NavLink>
-      <NavLink activeClassName="active" to='/about'>about</NavLink>
       <NavLink activeClassName="active" to='/projects'>projects</NavLink>
+      <NavLink activeClassName="active" to='/about'>about</NavLink>
     </nav>
   </div>
 )

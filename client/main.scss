@@ -20,13 +20,13 @@ __Sections__
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700,900&display=swap');
  
 
-////////////////      Thanks to Dmitry Borody for his awesome guide on mixins
-// 3. THEMES //       https://medium.com/@dmitriy.borodiy/easy-color-theming-with-scss-bc38fd5734d1
+////////////////
+// 3. THEMES //
 ///////////////
 
 $themes: (
   light: (
-    primary: #f1e5d6,
+    primary: #f9f3ed,
     secondary: #342e37,
     active-color: #e57853, 
     alt-color: #A43A4B,
@@ -38,10 +38,10 @@ $themes: (
     alt-color: #793F5C,
   ),
   blue: (
-    primary: #1e1e2c,
-    secondary: #fff,
-    active-color: #33E1ED,
-    alt-color: #666695,
+    primary: #323846,
+    secondary: #fbf9f3,
+    active-color: #c3f7eb,
+    alt-color: #78dbf4,
   ),
 );
 
@@ -59,6 +59,7 @@ $themes: (
     }
   }
 }
+
 
 @function themed($key) {
   @return map-get($theme-map, $key);
@@ -82,17 +83,17 @@ h1 {
   font-weight: bold;
 }
 h2 {
-  font-size: 2.5rem;
+  font-size: 2.7rem;
 }
 h3 {
-  font-size: 2.2rem;
+  font-size: 2.4rem;
 }
 h4 {
-  font-size: 1.8rem;
+  font-size: 2.1rem;
 }
 
 p {
-  font-size: 1.4rem;
+  font-size: 1.8rem;
 }
 
 a {
@@ -169,6 +170,10 @@ a:hover {
   
 .jumbo {
   grid-area: jumbo;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 
   h1 {
     font-size: 7rem;
@@ -179,9 +184,24 @@ a:hover {
     -webkit-animation: focus-in-expand 1.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     animation: focus-in-expand 1.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   }
+
+  .jumbo-img {
+    height: 20rem;
+    width: auto;
+    -webkit-animation: slide-in-right 1.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) .4s both;
+    animation: slide-in-right 1.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) .4s both;
+  
+  }
+
 }
 
 .navbar {
+  grid-area: navbar;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
 
   ul {
 
@@ -222,13 +242,6 @@ a:hover {
       }
     }
   }
-
-  grid-area: navbar;
-  
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: flex-end;
 
   nav {
     display: flex;
@@ -283,6 +296,8 @@ a:hover {
     opacity: 1;
   }
 }
+
+
 
 // << NAVBAR >> \\
 @-webkit-keyframes slide-in-right {

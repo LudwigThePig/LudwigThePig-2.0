@@ -1,9 +1,9 @@
 import * as React from 'react';
-
 const Home = () => (
-  <div>
+  <React.Fragment>
     <h1 className="logo">Welcome to<br/>LudwigThePig</h1>
-  </div>
+    <img className="jumbo-img" src="static/assets/pig-jumbo.png" alt="jumbo ludwig the pig"></img>
+  </React.Fragment>
 )
 
 export default Home;
