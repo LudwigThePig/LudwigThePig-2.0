@@ -180,17 +180,20 @@ a:hover {
     font-weight: 300;
     text-align: center;
   }
-  .logo {
+  
+  .animatedTxt{
     -webkit-animation: focus-in-expand 1.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     animation: focus-in-expand 1.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   }
+  .animatedImg {
+      -webkit-animation: slide-in-right 1.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) .4s both;
+      animation: slide-in-right 1.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) .4s both;
+  }
+  
 
   .jumbo-img {
     height: 20rem;
-    width: auto;
-    -webkit-animation: slide-in-right 1.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) .4s both;
-    animation: slide-in-right 1.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) .4s both;
-  
+    width: auto;  
   }
 
 }

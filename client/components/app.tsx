@@ -14,7 +14,6 @@ import Projects from '../pages/projects';
 import store from '../redux/store';
 import { themePayload } from '../redux/types/themeTypes';
 
-
 interface IAppProps {
   compiler: string;
   framework: string;
@@ -22,7 +21,8 @@ interface IAppProps {
 }
 
 interface IAppState {
-  theme?: themePayload
+  theme?: themePayload;
+  initialLoad?: boolean;
 }
 
 export default class App extends React.Component <IAppProps, IAppState> {
@@ -38,7 +38,11 @@ export default class App extends React.Component <IAppProps, IAppState> {
     store.subscribe(() => {
       this.setState({
         theme: store.getState().theme.activeTheme,
-        initial: store.getState().initialLoad.activeInitialLoad
+        initialLoad: store.getState().initialLoad.activeInitialLoad
+      }, () => {
+        if (this.state.initialLoad) {
+          store.dispatch(updateInitialLoad(false))
+        }
       });
     });
   }
