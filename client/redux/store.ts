@@ -7,7 +7,7 @@ export const initialState:AppState = {
     activeNav : 'home',
   },
   theme: {
-    activeTheme: 'light'
+    activeTheme: 'dark'
   },
   initialLoad: {
     activeInitialLoad: true

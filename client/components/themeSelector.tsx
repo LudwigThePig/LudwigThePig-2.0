@@ -36,18 +36,6 @@ class ThemeSelector extends React.Component <{}, IThemeSelectorState>{
           <li>
             <input 
               type="radio" 
-              checked={theme === 'light'}
-              name="theme-opt" 
-              onChange={this.handleChange}
-              onClick={this.handleChange} 
-              value="light" 
-            />
-            <label><span role="img" aria-label="light-theme">🌞</span></label>
-          </li>
-          
-          <li>
-            <input 
-              type="radio" 
               checked={theme === 'dark'}
               name="theme-opt" 
               onChange={this.handleChange}
@@ -55,6 +43,18 @@ class ThemeSelector extends React.Component <{}, IThemeSelectorState>{
               value="dark" 
               />
             <label><span role="img" aria-label="dark-theme">🌚</span></label>
+          </li>
+
+          <li>
+            <input 
+              type="radio" 
+              checked={theme === 'light'}
+              name="theme-opt" 
+              onChange={this.handleChange}
+              onClick={this.handleChange} 
+              value="light" 
+            />
+            <label><span role="img" aria-label="light-theme">🌞</span></label>
           </li>
 
           <li>
