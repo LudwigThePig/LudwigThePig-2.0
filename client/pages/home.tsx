@@ -12,7 +12,7 @@ class Home extends React.Component <{}, IAppState>{
   constructor(props: {}) {
     super(props)
     this.state = {
-      initialLoad: true
+      initialLoad: store.getState().initialLoad.activeInitialLoad
     }
   }
 
