@@ -3,16 +3,20 @@ import * as ReactDOMServer from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
 import App from '../client/components/app';
 import { Provider } from 'react-redux';
-import store from '../client/redux/store';
+import { PersistGate } from 'redux-persist/integration/react';
+// import store from '../client/redux/store';
+import { store, persistor  } from '../client/redux/store';
 
 export default function renderer(html: string, css:string, url:string): string {  
 
   const context = {};
   const app = ReactDOMServer.renderToString(
     <Provider store={store}>
-      <StaticRouter location={url} context={context} >
-        <App compiler="TypeScript" framework="React" />
-      </StaticRouter>
+      <PersistGate loading={null} persistor={persistor}>
+        <StaticRouter location={url} context={context} >
+          <App compiler="TypeScript" framework="React" />
+        </StaticRouter>
+      </PersistGate>
     </Provider>
       );
 

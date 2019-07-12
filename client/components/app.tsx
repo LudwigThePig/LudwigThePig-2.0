@@ -11,8 +11,9 @@ import About from '../pages/about';
 import Projects from '../pages/projects';
 
 // Redux
-import store from '../redux/store';
+import { store } from '../redux/store';
 import { themePayload } from '../redux/types/themeTypes';
+import { updateInitialLoad } from '../redux/actions/initialLoadAction';
 
 interface IAppProps {
   compiler: string;

@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import store from '../redux/store';
+import { store } from '../redux/store';
 import { updateNav } from '../redux/actions/themeAction';
 import { render } from 'react-dom';
 import { themePayload } from '../redux/types/themeTypes';

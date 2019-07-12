@@ -1,5 +1,5 @@
 import * as React from 'react';
-import store from '../redux/store';
+import { store } from '../redux/store';
 import { updateInitialLoad } from '../redux/actions/initialLoadAction';
 
 
