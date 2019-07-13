@@ -14,6 +14,7 @@ Second, this site is written in TypeScript! There is a lot of cool technology ba
 - This app is a Progressive Web Application (PWA). 
 - The app is mobile responsive, although some of the projects may not be.
 - Isomorphic application with react-router-dom! It's like Next.js but TypeScript
+- Public APIs to get a list of projects and private API to maintain this list.
 
 ## Technologies
 - TypeScript
@@ -23,6 +24,12 @@ Second, this site is written in TypeScript! There is a lot of cool technology ba
 - Service Workers
 - Node.js
 - Express
+- PostgreSQL
 
 ## Styling
 The style sheet was written with Sass. There are three themes, dark, light, and blue.
+
+## Public API
+There is a publicly accessible API. Currently, you can make get requests to /api/v1/projects to get a JSON object of all projects. I cannot imagine that anyone would want to use this API but it will be a great demonstration of my API and documentation skills.
+
+Documentation on this feature will continue to improve as the project grows.
