@@ -13,7 +13,7 @@ Second, this site is written in TypeScript! There is a lot of cool technology ba
 ## Features
 - This app is a Progressive Web Application (PWA). 
 - The app is mobile responsive, although some of the projects may not be.
-- Isomorphic application with react-router-dom! In a sense, I recreated the magic of Next.js. Cool huh!?
+- Isomorphic application with react-router-dom! It's like Next.js but TypeScript
 
 ## Technologies
 - TypeScript
@@ -25,4 +25,4 @@ Second, this site is written in TypeScript! There is a lot of cool technology ba
 - Express
 
 ## Styling
-The style sheet was written with Sass. There are three themes, dark, light, and blue. All color palletes are courtesy of [@awsmcolors](https://www.instagram.com/awsmcolor/) on instagram.
+The style sheet was written with Sass. There are three themes, dark, light, and blue.
