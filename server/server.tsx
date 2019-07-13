@@ -21,6 +21,10 @@ const pgp: IMain = pgPromise({error(error, e) {
 }});
 export const db:IDatabase<any> = pgp(connectionSting)
 
+db.connect()
+  .then( data => console.log('connected to the database'))
+  .catch(console.log)
+
 const app = express();
 
 app.use('/static', express.static('bin'))
