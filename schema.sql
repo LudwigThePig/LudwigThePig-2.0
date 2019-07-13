@@ -10,11 +10,21 @@ CREATE TABLE projects(
   image_url VARCHAR,
   created DATE NOT NULL,
   updated DATE,
-  cat_id SMALLINT
+  cat_id SMALLINT REFERENCES categories_projects(id),
+  PRIMARY KEY (id)
 );
 
 DROP TABLE categories IF EXISTS;
 CREATE TABLE categories(
   id SERIAL NOT NULL,
-  name VARCHAR NOT NULL
+  name VARCHAR NOT NULL,
+  PRIMARY KEY (id)
+);
+
+DROP TABLE categories_projects IF EXISTS;
+CREATE TABLE categories_projects(
+  id SERIAL NOT NULL,
+  proj_id SMALLINT NOT NULL REFERENCES projects(id),
+  cat_id SMALLINT NOT NULL REFERENCES categories(id),
+  PRIMARY KEY (id)
 );
