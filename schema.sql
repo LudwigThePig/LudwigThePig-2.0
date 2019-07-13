@@ -1,0 +1,8 @@
+DROP DATABASE ltp IF EXISTS;
+CREATE DATABASE ltp;
+
+
+CREATE TABLE projects;
+
+
+CREATE TABLE categories;
