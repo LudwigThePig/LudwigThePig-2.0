@@ -13,7 +13,7 @@ interface PostBody {
   name: string;
   description?: string;
   url: string;
-  imageUrl?: string;
+  image_url?: string;
   created: string;
   updated?: string;
   categories: Array<Categories>;
@@ -37,26 +37,27 @@ export default class ProjectController {
   
   public postProject(req:Request, res:Response): void{
     const body:PostBody = req.body;
-    console.log(req.body, req.query)
-
     const postKeys:any = Object.keys(body).filter(x => x !== 'categories');
     const postVals = postKeys.map((key:string):any => body[key])
 
     const FIELDS = postKeys.join(', ');
     const $VALS = postKeys.map((val:string, i: number): any => `$${i + 1}`)
-                          .join(', ')
+                          .join(', ');
 
-    db.any(`
-        INSERT INTO projects 
-        (${FIELDS}) VALUES (${$VALS}) RETURNING id;
-        ${body.categories.map(cat => 
-          `INSERT INTO cat_proj (proj_id, cat_id)
-          VALUES (RETURNING id,
-          SELECT id FROM categoreies
-          WHERE name = ${cat});`
-        )}
+    const query = `
+      WITH new_proj AS (INSERT INTO projects 
+      (${FIELDS}) VALUES (${$VALS}) RETURNING id)
+      
+      ${body.categories.map(cat => 
+        `INSERT INTO cat_proj (proj_id, cat_id)
+         SELECT p.id, c.id FROM new_proj p, categories c
+         WHERE c.name='${cat}'`
+      )};
+    `
 
-      `)
+    console.log(query);
+
+    db.any(query, postVals)
       .then(console.log)
       .catch(console.log);
   }
