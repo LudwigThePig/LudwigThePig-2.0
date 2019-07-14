@@ -12,7 +12,7 @@ CREATE TABLE projects(
   image_url VARCHAR,
   created DATE NOT NULL,
   updated DATE,
-  cat_id SMALLINT,
+  cat_id SMALLINT NOT NULL,
   PRIMARY KEY (id)
   -- FOREIGN KEY (cat_id) REFERENCES cat_proj (id)
 );

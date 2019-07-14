@@ -7,6 +7,8 @@ import apiRouter from './router';
 import { Response, Request, NextFunction } from 'express';
 import {IMain, IDatabase} from 'pg-promise';
 import * as pgPromise from 'pg-promise';
+import * as bodyParser from 'body-parser';
+
 
 // Environmental Variables
 const port = process.env.PORT;
@@ -27,6 +29,7 @@ db.connect()
 
 const app = express();
 
+app.use(bodyParser.json());
 app.use('/static', express.static('bin'))
 
 apiRouter(app);
