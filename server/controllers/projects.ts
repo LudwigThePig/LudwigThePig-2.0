@@ -47,12 +47,12 @@ export default class ProjectController {
     const query = `
       WITH new_proj AS (INSERT INTO projects 
       (${FIELDS}) VALUES (${$VALS}) RETURNING id)
-      
+
+      INSERT INTO cat_proj (proj_id, cat_id)
       ${body.categories.map(cat => 
-        `INSERT INTO cat_proj (proj_id, cat_id)
-         SELECT p.id, c.id FROM new_proj p, categories c
+        `SELECT p.id, c.id FROM new_proj p, categories c
          WHERE c.name='${cat}'`
-      )};
+      ).join('\r\nUNION ALL\r\n')};
     `
 
     console.log(query);
