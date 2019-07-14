@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { db } from '../server';
-import { IPostBody } from './types';
+import { IPostBody } from './projectTypes';
 
 export default class ProjectController {
   public getProjects(req:Request, res:Response): void {
@@ -41,11 +41,20 @@ export default class ProjectController {
   }
 
   public putProject(req:Request, res:Response): void {
-
+    
   }
 
   public deleteProject(req:Request, res:Response): void {
-
+    const { id } = req.body;
+    const query = `
+      DELETE FROM projects p
+      USING cat_proj j
+      WHERE p.id=${id}
+      AND j.proj_id=${id};
+    `
+    db.any(query)
+      .then(data => res.send(data))
+      .catch(console.log)
   }
 } 
 
