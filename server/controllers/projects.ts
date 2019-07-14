@@ -1,25 +1,6 @@
 import { Request, Response } from 'express';
 import { db } from '../server';
-
-enum Categories {
-  'client',
-  'typescript',
-  'frontend',
-  'fullstack',
-  'game',
-}
-
-interface PostBody {
-  name: string;
-  description?: string;
-  url: string;
-  image_url?: string;
-  created: string;
-  updated?: string;
-  categories: Array<Categories>;
-  [key: string]: any;
-
-}
+import { IPostBody } from './types';
 
 export default class ProjectController {
   public getProjects(req:Request, res:Response): void {
@@ -36,7 +17,7 @@ export default class ProjectController {
   }
   
   public postProject(req:Request, res:Response): void{
-    const body:PostBody = req.body;
+    const body:IPostBody = req.body;
     const postKeys:any = Object.keys(body).filter(x => x !== 'categories');
     const postVals = postKeys.map((key:string):any => body[key])
 
@@ -54,12 +35,13 @@ export default class ProjectController {
          WHERE c.name='${cat}'`
       ).join('\r\nUNION ALL\r\n')};
     `
-
-    console.log(query);
-
     db.any(query, postVals)
-      .then(console.log)
-      .catch(console.log);
+      .then(data => res.send(`Project succesfully posted\n${JSON.stringify(body)}`))
+      .catch(err => res.send(err));
+  }
+
+  public putProject(req:Request, res:Response): void {
+
   }
 
   public deleteProject(req:Request, res:Response): void {
