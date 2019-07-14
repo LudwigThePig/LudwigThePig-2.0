@@ -6,6 +6,7 @@ const project = new Project;
 export default (app: Application) => {
   app.route('/api/v1/projects*')
     .get(project.getProjects)
+    .put(project.putProject)
     .post(project.postProject)
     .delete(project.deleteProject);   
 }

@@ -1,17 +1,17 @@
 import { Request, Response } from 'express';
 import { db } from '../server';
-import { IPostBody } from './projectTypes';
+import { IPostBody, IPutBody, IDeleteBody, IGetParams } from './projectTypes';
 
 export default class ProjectController {
   public getProjects(req:Request, res:Response): void {
-    const query = req.query;
-    // // If no query
-    if (Object.keys(query).length === 0) {      // if no query
+    const query:IGetParams = req.query;
+    // If no query
+    if (Object.keys(query).length === 0) {
       db.any('SELECT * FROM projects')
         .then(data => res.send(data))
         .catch(console.log);
-    } else {                                    // if query
-      // find relevant queries
+    } else {
+      // TODO: get params
       db.any('SELECT * FROM projects')
     }
   }
@@ -41,11 +41,25 @@ export default class ProjectController {
   }
 
   public putProject(req:Request, res:Response): void {
-    
+    const body:IPutBody = req.body;
+    const colsAndVals = Object.keys(body)
+                              .filter(key => key !== 'id')
+                              .map(key => `${key}='${body[key]}'`)
+                              .join(',\r\n');
+    const query = `
+      UPDATE projects
+      SET ${colsAndVals}
+      WHERE id=${body.id};
+    `; 
+
+    db.any(query)
+      .then(data => res.send(`Project no. ${body.id} has been updated.`))
+      .catch(err => res.send(err));
+
   }
 
   public deleteProject(req:Request, res:Response): void {
-    const { id } = req.body;
+    const { id }:IDeleteBody = req.body;
     const query = `
       DELETE FROM projects p
       USING cat_proj j
