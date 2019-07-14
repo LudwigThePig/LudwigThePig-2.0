@@ -17,6 +17,7 @@ export interface IGetParams {
 
 export interface IPostBody {
   name: string;
+  key: string;
   description?: string;
   url: string;
   image_url?: string;
@@ -28,6 +29,7 @@ export interface IPostBody {
 
 export interface IPutBody {
   id: number;
+  key: string;
   name?: string;
   description?: string;
   url?: string;
@@ -40,4 +42,5 @@ export interface IPutBody {
 
 export interface IDeleteBody {
   id: number;
+  key: string;
 }
