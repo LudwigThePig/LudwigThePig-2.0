@@ -11,10 +11,7 @@ CREATE TABLE projects(
   url VARCHAR NOT NULL,
   image_url VARCHAR,
   created VARCHAR NOT NULL,
-  updated VARCHAR,
-  cat_id SMALLINT,
   PRIMARY KEY (id)
-  -- FOREIGN KEY (cat_id) REFERENCES cat_proj (id)
 );
 
 DROP TABLE IF EXISTS categories;
@@ -30,6 +27,4 @@ CREATE TABLE cat_proj(
   proj_id SMALLINT NOT NULL,
   cat_id SMALLINT NOT NULL,
   PRIMARY KEY (id)
-  -- FOREIGN KEY (proj_id) REFERENCES projects(id),
-  -- FOREIGN KEY (cat_id) REFERENCES categories(id)
 );

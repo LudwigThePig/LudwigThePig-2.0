@@ -5,6 +5,12 @@ import { IPostBody, IPutBody, IDeleteBody, IGetParams } from './projectTypes';
 const API_KEY = process.env.API_KEY;
 
 export default class ProjectController {
+
+  private handleError(res:Response, err: Error) {
+    console.log(err);
+    return res.send(err);
+  }
+  
   public getProjects(req:Request, res:Response): void {
     const query:IGetParams = req.query;
     // If no query
@@ -12,15 +18,21 @@ export default class ProjectController {
       db.any('SELECT * FROM projects')
         .then(data => res.send(data))
         .catch(err => {
-          console.log(err)
-          res.send(err)
+          console.log(err);
+          return res.send(err);
         });
     } else {
-      // TODO: get params
+      // TODO: implement filters for GET request 
       db.any('SELECT * FROM projects')
+        .then(data => res.send(data))
+        .catch(err => {
+          console.log(err);
+          return res.send(err);
+        });
     }
   }
-  
+
+
   public postProject(req:Request, res:Response): void{
     const body:IPostBody = req.body;
     if (body.key !== API_KEY) {
@@ -44,14 +56,16 @@ export default class ProjectController {
           WHERE c.name='${cat}'`
         ).join('\r\nUNION ALL\r\n')};
       `
+
       db.any(query, postVals)
         .then(() => res.send(`Project succesfully posted\n${JSON.stringify(body)}`))
         .catch(err => {
-          console.log(err)
-          res.send(err)
+          console.log(err);
+          return res.send(err);
         });
     }
   }
+
 
   public putProject(req:Request, res:Response): void {
     const body:IPutBody = req.body;
@@ -73,11 +87,12 @@ export default class ProjectController {
       db.any(query)
         .then(() => res.send(`Project no. ${body.id} has been updated.`))
         .catch(err => {
-          console.log(err)
-          res.send(err)
+          console.log(err);
+          return res.send(err);
         });
     }
   }
+
 
   public deleteProject(req:Request, res:Response): void {
     const { id, key }:IDeleteBody = req.body;
@@ -94,20 +109,9 @@ export default class ProjectController {
       db.any(query)
         .then(data => res.send(`Project no${id} has been deleted.`))
         .catch(err => {
-          console.log(err)
-          res.send(err)
+          console.log(err);
+          return res.send(err);
         });
     }
   }
-} 
-
-// Test POST query
-// {
-// 	"name": "Chess",
-// 	"description": "A simple game of chess",
-// 	"url": "https://www.chess.com/",
-// 	"imageUrl": "https://www.chessusa.com/mm5/graphics/00000001/staunton-chess-pieces-category.jpg",
-// 	"created": "6th century",
-// 	"updated": "yesterday",
-// 	"categories": ["game", "typescript"]
-//  }
+}

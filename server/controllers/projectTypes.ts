@@ -36,7 +36,7 @@ export interface IPutBody {
   image_url?: string;
   created?: string;
   updated?: string;
-  categories?: Array<Categories>;
+  // categories?: Array<Categories>;  ** TODO: implement categories in UPDATE query **
   [key: string]: any;
 }
 
