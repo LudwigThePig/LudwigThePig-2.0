@@ -17,7 +17,7 @@ class Projects extends React.Component <IProjectsProps, IProjectsState>  {
   constructor(props: IProjectsProps) {
     super(props);
     this.state = {
-      projects: store.getState().projects.activeProjects
+      projects: store.getState().projects.projects
     }
   }
 

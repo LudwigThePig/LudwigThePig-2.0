@@ -11,6 +11,9 @@ export const initialState:AppState = {
   },
   initialLoad: {
     activeInitialLoad: true
+  },
+  projects: {
+    projects: []
   }
 }
 export const store = createStore(rootReducer, initialState, applyMiddleware(thunk));
