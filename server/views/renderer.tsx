@@ -1,9 +1,9 @@
 import * as React from 'react';
 import * as ReactDOMServer from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
-import App from '../client/components/app';
+import App from '../../client/components/app';
 import { Provider } from 'react-redux';
-import { store  } from '../client/redux/store';
+import { store  } from '../../client/redux/store';
 
 export default function renderer(html: string, css:string, url:string): string {  
 

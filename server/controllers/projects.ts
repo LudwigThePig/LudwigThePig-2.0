@@ -13,6 +13,7 @@ export default class ProjectController {
   
   public getProjects(req:Request, res:Response): void {
     const query:IGetParams = req.query;
+    console.log(req.url)
     // If no query
     if (Object.keys(query).length === 0) {
       db.any('SELECT * FROM projects')
@@ -36,11 +37,11 @@ export default class ProjectController {
   public postProject(req:Request, res:Response): void{
     const body:IPostBody = req.body;
     if (body.key !== API_KEY) {
-      res.send(`Hey, you don't have the authority to do that!`)
+      res.send(`Hey, you don't have the authority to do that!`);
     } else {  
 
       const postKeys:any = Object.keys(body).filter(key => key !== 'categories' && key !== 'key');
-      const postVals = postKeys.map((key:string):any => body[key])
+      const postVals = postKeys.map((key:string):any => body[key]);
 
       const FIELDS = postKeys.join(', ');
       const $VALS = postKeys.map((val:string, i: number): any => `$${i + 1}`)

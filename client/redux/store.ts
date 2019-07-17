@@ -16,4 +16,5 @@ export const initialState:AppState = {
     projects: []
   }
 }
+
 export const store = createStore(rootReducer, initialState, applyMiddleware(thunk));
