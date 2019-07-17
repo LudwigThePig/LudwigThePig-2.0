@@ -47,10 +47,13 @@ class Projects extends React.Component <IProjectsProps, IProjectsState>  {
   render() {
     const { projects } = this.state;
     return (
-      <div>
-        <h1>Projects</h1>
+      <React.Fragment>
+        
+      <h1>Projects</h1>
+        <div className="projects-container">
         { projects.map(proj => <Project key={proj.id} {...proj} />) }
       </div>
+      </React.Fragment>
     );
   }
 } 

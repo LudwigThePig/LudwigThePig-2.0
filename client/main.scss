@@ -8,21 +8,23 @@ __Sections__
 3. HTML Base Styling
 4. Modifiers
 5. Component Styles
+  a) Template Styling
+  b) Page Styling
 6. Animations
 
 
 /*************************************************************
 *************************************************************/
-////////////////
-// 1. IMPORTS //
-////////////////
+//////////////////
+//* 1. IMPORTS *//
+//////////////////
 
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700,900&display=swap');
  
 
-////////////////
-// 3. THEMES //
-///////////////
+//////////////////
+//* 2. THEMES *//
+/////////////////
 
 $themes: (
   light: (
@@ -65,9 +67,9 @@ $themes: (
   @return map-get($theme-map, $key);
 }
 
-//////////////
-// 3. HTML //
-/////////////
+////////////////
+//* 3. HTML *//
+///////////////
 
 html {
   font-size: 10px;
@@ -110,9 +112,31 @@ a:hover {
   }
 }
 
-//////////////////
-// 4. Modifiers //
-//////////////////
+::-webkit-scrollbar { // Scrollbar width
+  width: 10px;
+}
+
+::-webkit-scrollbar-track { // Scrollbar Track
+  @include getTheme($themes) {
+    background: themed('scondary')
+  }
+}
+
+::-webkit-scrollbar-thumb { // Scrollbar handle
+  @include getTheme($themes) {
+    background: themed('active-color')
+  } 
+}
+
+::-webkit-scrollbar-thumb:hover { // Scrollbar handle on hover
+  @include getTheme($themes) {
+    background: themed('active-color')
+  } 
+}
+
+////////////////////
+//* 4. Modifiers *//
+////////////////////
 
 
 .fa {
@@ -125,10 +149,12 @@ a:hover {
 }
 
 
-///////////////////
-// 5. Components //
-///////////////////
+/////////////////////
+//* 5. Components *//
+/////////////////////
 
+
+//* 5.a Template Styling *//
 #app {
   // Grid settings for desktop
   display: grid;
@@ -169,16 +195,15 @@ a:hover {
   }
   
 .jumbo {
+  display: block;
+  width: 80vw;
   grid-area: jumbo;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
 
   h1 {
     font-size: 7rem;
     font-weight: 300;
     text-align: center;
+    display: block;
   }
   
   .animatedTxt{
@@ -195,7 +220,6 @@ a:hover {
     height: 20rem;
     width: auto;  
   }
-
 }
 
 .navbar {
@@ -246,6 +270,8 @@ a:hover {
     }
   }
 
+
+
   nav {
     display: flex;
     flex-direction: column;
@@ -267,10 +293,47 @@ a:hover {
 	animation: slide-in-bottom 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) .8s both;
 }
 
+//* 5.b Page Styling *//
 
-///////////////////
-// 6. Animations //
-///////////////////
+#home {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.projects-container {
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+
+
+  .project {
+    @include getTheme($themes) {
+      background: themed('alt-color');  
+    }
+    text-align: center;
+
+    flex: 0 0 auto;
+    height: 100%;
+    width: 50rem;
+    margin: 0 20px;
+    img {
+      height: 60%;
+      width: auto;
+    }
+    
+  }
+  
+}
+
+/////////////////////
+//* 6. Animations *//
+/////////////////////
 
 // << JUMBO >> \\
 @-webkit-keyframes focus-in-expand {
