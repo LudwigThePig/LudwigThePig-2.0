@@ -18,7 +18,7 @@ interface IProjectsProps {
 class Projects extends React.Component <IProjectsProps, IProjectsState>  {
 
   private static getProjects() {
-    return axios(`http://localhost:3000/api/v1/projects`)
+    return axios(`http://localhost:3000/api/v1/projects/`)
       .then(data => data)
       .catch(console.error);
   }
@@ -28,6 +28,15 @@ class Projects extends React.Component <IProjectsProps, IProjectsState>  {
     this.state = {
       projects: store.getState().projects.projects
     }
+  }
+
+  componentWillMount() {
+    store.subscribe(() => {
+      const newProjects = store.getState().projects.projects;
+      this.setState({
+        projects: newProjects
+      });
+    })
   }
 
   componentDidMount() {
@@ -40,7 +49,7 @@ class Projects extends React.Component <IProjectsProps, IProjectsState>  {
     return (
       <div>
         <h1>Projects</h1>
-        { projects.map(proj => <Project {...proj} />) }
+        { projects.map(proj => <Project key={proj.id} {...proj} />) }
       </div>
     );
   }
