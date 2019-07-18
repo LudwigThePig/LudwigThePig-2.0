@@ -84,19 +84,10 @@ h1 {
   font-size: 3rem;
   font-weight: bold;
 }
-h2 {
-  font-size: 2.7rem;
-}
-h3 {
-  font-size: 2.4rem;
-}
-h4 {
-  font-size: 2.1rem;
-}
-
-p {
-  font-size: 1.8rem;
-}
+h2 {  font-size: 2.7rem; }
+h3 {  font-size: 2.4rem; }
+h4 {  font-size: 2.1rem; }
+p {  font-size: 1.8rem; }
 
 a {
   text-decoration: none;
@@ -118,20 +109,35 @@ a:hover {
 
 ::-webkit-scrollbar-track { // Scrollbar Track
   @include getTheme($themes) {
-    background: themed('scondary')
+    background: themed('primary');
   }
 }
 
 ::-webkit-scrollbar-thumb { // Scrollbar handle
   @include getTheme($themes) {
-    background: themed('active-color')
+    background: themed('active-color');
   } 
 }
 
 ::-webkit-scrollbar-thumb:hover { // Scrollbar handle on hover
   @include getTheme($themes) {
-    background: themed('active-color')
+    background: themed('active-color');
   } 
+}
+
+@media only screen and(max-width: 720px) {  
+  html {
+    font-size: 5px;
+  }
+  h1 {
+    font-size: 4rem;
+    font-weight: bold;
+  }
+  h2 {  font-size: 3.7rem; }
+  h3 {  font-size: 3.4rem; }
+  h4 {  font-size: 3.1rem; }
+  p {  font-size: 2.8rem; }
+  
 }
 
 ////////////////////
@@ -170,29 +176,37 @@ a:hover {
     background-color: themed('primary');  
   }
 }
-  
-  .active {
-    @include getTheme($themes) {
-      color: themed('active-color');  
-    }
+
+@media only screen and(max-width: 720px) {  
+  #app {
+    // grid-template-columns: 1.7fr 0.3fr;
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: "navbar" "jumbo" "footer";
   }
-  
-  .fa {
-    @include getTheme($themes) {
-      color: themed('active-color');  
-    }
+}
+
+.active {
+  @include getTheme($themes) {
+    color: themed('active-color');  
   }
-  .fa:hover {
-    @include getTheme($themes) {
-      color: themed('secondary');  
-    }
-    cursor: pointer;
+}
+
+.fa {
+  @include getTheme($themes) {
+    color: themed('active-color');  
   }
-  a:hover {
-    @include getTheme($themes) {
-      color: themed('secondary');  
-    }
+}
+.fa:hover {
+  @include getTheme($themes) {
+    color: themed('secondary');  
   }
+  cursor: pointer;
+}
+a:hover {
+  @include getTheme($themes) {
+    color: themed('secondary');  
+  }
+}
   
 .jumbo {
   display: block;
@@ -221,10 +235,15 @@ a:hover {
     width: auto;  
   }
 }
+@media only screen and(max-width: 720px) {  
+  .jumbo {
+    width: 100vw;
+  }
+}  
+
 
 .navbar {
   grid-area: navbar;
-  
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -270,8 +289,6 @@ a:hover {
     }
   }
 
-
-
   nav {
     display: flex;
     flex-direction: column;
@@ -284,6 +301,19 @@ a:hover {
 
   -webkit-animation: slide-in-right 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) .8s both;
   animation: slide-in-right 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) .8s both;
+}
+
+@media only screen and(max-width: 720px) {  
+  .navbar {
+    width: 100vw;
+    flex-direction: row;
+    nav {
+      flex-direction: row;
+      a {
+        margin: 0 1.5rem;
+      }
+    }
+  }
 }
 
 .footer { 
@@ -317,18 +347,33 @@ a:hover {
       background: themed('alt-color');  
     }
     text-align: center;
-
     flex: 0 0 auto;
     height: 100%;
     width: 50rem;
     margin: 0 20px;
+    padding: 1rem;
+
     img {
       height: 60%;
       width: auto;
     }
-    
+
+    span {
+      margin-left: 1.4rem;
+      font-size: 1.4rem;
+    }
+  }  
+}
+
+.project:hover, .project:active {
+  @include getTheme($themes) {
+    background: themed('active-color');  
   }
-  
+  cursor: pointer;
+}
+
+#about {
+  text-align: center;
 }
 
 /////////////////////
