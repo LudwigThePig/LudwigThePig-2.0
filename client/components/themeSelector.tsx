@@ -4,6 +4,7 @@ import { store } from '../redux/store';
 import { updateNav } from '../redux/actions/themeAction';
 import { render } from 'react-dom';
 import { themePayload } from '../redux/types/themeTypes';
+import { navPayload } from '../redux/types/navTypes';
 
 interface IThemeSelectorState {
   theme: themePayload
@@ -31,8 +32,19 @@ class ThemeSelector extends React.Component <{}, IThemeSelectorState>{
 
   render() {
     const { theme } = this.state;
+    const getThemeIcon = () => {
+      switch (theme) {
+        case 'light':
+          return <span role="img" aria-label="light-theme">🌞</span>;
+        case 'blue':
+          return <span role="img" aria-label="blue-theme">🌊</span>
+          default:
+              return <span role="img" aria-label="dark-theme">🌚</span>;   
+      }
+    }
     return (
-        <ul>       
+        <ul>
+         {/* RADIO BUTTONS FOR DESKTOP */}
           <li>
             <input 
               type="radio" 
@@ -68,6 +80,10 @@ class ThemeSelector extends React.Component <{}, IThemeSelectorState>{
               />
             <label><span role="img" aria-label="blue-theme">🌊</span></label>
           </li>
+
+          {/* BUTTON FOR MOBILE */}
+          <button onClick={() =>{}}>{ getThemeIcon() }</button>
+
         </ul>
     );
   } 

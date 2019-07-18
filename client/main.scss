@@ -30,8 +30,8 @@ $themes: (
   light: (
     primary: #f9f3ed,
     secondary: #342e37,
-    active-color: #e57853, 
-    alt-color: #A43A4B,
+    active-color: #A43A4B,
+    alt-color: #e57853, 
   ),
   dark: (
     primary: #001011,
@@ -250,6 +250,7 @@ a:hover {
   justify-content: space-between;
 
   ul {
+    button { display: none; }
 
     @include getTheme($themes) {
       background: themed('alt-color');  
@@ -306,11 +307,31 @@ a:hover {
 @media only screen and(max-width: 720px) {  
   .navbar {
     width: 100vw;
-    flex-direction: row;
+    flex-direction: row-reverse;
     nav {
       flex-direction: row;
       a {
         margin: 0 1.5rem;
+        font-size: 4.6rem;
+        font-weight: 400;
+      }
+    }
+    ul {
+      li { display: none; }
+      button {
+        @include getTheme($themes) {
+          background: themed('alt-color');  
+        }
+        display: block;
+        border: 0;
+        span {font-size: 4.6rem;}
+
+      }
+      button:active {
+        display: block;
+        @include getTheme($themes) {
+          background: themed('active-color');  
+        }
       }
     }
   }
@@ -323,6 +344,8 @@ a:hover {
 	animation: slide-in-bottom 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) .8s both;
 }
 
+
+
 //* 5.b Page Styling *//
 
 #home {
@@ -332,37 +355,59 @@ a:hover {
   align-items: center;
 }
 
-.projects-container {
-  width: 100%;
-  height: 60vh;
+#projects {
+
   display: flex;
-  flex-wrap: nowrap;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80vw;
+  .projects-container {
+    width: 90%;
+    height: 60vh;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    
+    
+    .project {
+      @include getTheme($themes) {
+        background: themed('alt-color');  
+      }
+      text-align: center;
+      flex: 0 0 auto;
+      height: 100%;
+      width: 50rem;
+      margin: 0 20px;
+      padding: 1rem;
+      
+      img {
+        height: 60%;
+        width: auto;
+      }
+      
+      span {
+        margin-left: 1.4rem;
+        font-size: 1.4rem;
+      }
+    }  
+  }
+}
 
-
-  .project {
-    @include getTheme($themes) {
-      background: themed('alt-color');  
+@media only screen and(max-width: 720px) {  
+  #projects {
+    width: 100vw;
+    height: 80vh;
+    .projects-container {
+      height: 100%;
+      .project img {
+        width: 100%;
+        height: auto;
+      }
     }
-    text-align: center;
-    flex: 0 0 auto;
-    height: 100%;
-    width: 50rem;
-    margin: 0 20px;
-    padding: 1rem;
-
-    img {
-      height: 60%;
-      width: auto;
-    }
-
-    span {
-      margin-left: 1.4rem;
-      font-size: 1.4rem;
-    }
-  }  
+  }
 }
 
 .project:hover, .project:active {
