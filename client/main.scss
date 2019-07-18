@@ -179,9 +179,13 @@ a:hover {
 
 @media only screen and(max-width: 720px) {  
   #app {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center
     // grid-template-columns: 1.7fr 0.3fr;
-    grid-template-rows: repeat(3, auto);
-    grid-template-areas: "navbar" "jumbo" "footer";
+    // grid-template-rows: repeat(3, auto);
+    // grid-template-areas: "navbar" "jumbo" "footer";
   }
 }
 

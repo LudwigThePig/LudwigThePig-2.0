@@ -53,6 +53,7 @@ export default class App extends React.Component <IAppProps, IAppState> {
     return (
       <div className={`theme-${theme}`}>
         <div id="app">
+          <Navbar />
           <div className="jumbo">
             <Switch>
               <Route exact path="/" component={Home} />
@@ -61,7 +62,6 @@ export default class App extends React.Component <IAppProps, IAppState> {
             </Switch>
           </div>
           
-          <Navbar />
           <Footer />
         </div>
       </div>
