@@ -14,7 +14,7 @@ const Footer = () => (
     <a href="https://github.com/LudwigThePig">
       <FontAwesomeIcon icon={['fab', 'github']} className='fa' />
     </a>
-    <a href="https://www.instagram.com/morgangalvinphoto/">
+    <a href="https://www.instagram.com/morgandolibre/">
       <FontAwesomeIcon icon={['fab', 'instagram']} className='fa' />
     </a>
     <a href="https://www.strava.com/athletes/5897641">
