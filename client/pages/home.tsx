@@ -33,7 +33,6 @@ class Home extends React.Component <{}, IAppState>{
   render() {
     const { initialLoad } = this.state;
     const animated = initialLoad ? 'animated' : null;
-    console.log(animated)
     return  (
       <div id="home">
         <h1 className={`${animated}Txt`}>Welcome to<br/>LudwigThePig</h1>
