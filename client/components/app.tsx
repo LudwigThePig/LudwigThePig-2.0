@@ -24,6 +24,7 @@ interface IAppProps {
 interface IAppState {
   theme?: themePayload;
   initialLoad?: boolean;
+  exitAnimation: boolean;
 }
 
 export default class App extends React.Component <IAppProps, IAppState> {
@@ -31,7 +32,8 @@ export default class App extends React.Component <IAppProps, IAppState> {
   constructor(props: IAppProps){
     super(props);
     this.state = {
-      theme: store.getState().theme.activeTheme
+      theme: store.getState().theme.activeTheme,
+      exitAnimation: store.getState()
     }
   }
 

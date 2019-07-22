@@ -5,15 +5,17 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --config webpack.config.js -d -w",
-    "dev:compile": "webpack --config webpack.server.js -d --watch",
+    "dev:compile": "webpack --config webpack.server.js -d -w",
     "dev:start": "nodemon serverBundle.js",
     "dev:css": "node-sass -w client -o bin",
     "start": "npm-run-all --parallel dev:*",
-    "prod:build": "webpack --config webpack.config.js -p -w",
-    "prod:compile": "webpack --config webpack.server.js -p --watch",
-    "prod:css": "node-sass -w client -o bin --output-style compressed",
-    "prod:server": "node serverBundle.js",
+
+    "prod:build": "webpack --config webpack.config.js -p",
+    "prod:compile": "webpack --config webpack.server.js -p",
+    "prod:css": "node-sass client -o bin --output-style compressed",
+    "server": "node serverBundle.js",
     "prod:start": "npm-run-all --parallel prod:*",
+    
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
