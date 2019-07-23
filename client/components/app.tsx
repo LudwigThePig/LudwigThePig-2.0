@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 // Templates
 import Navbar from './navabar'
@@ -33,7 +34,7 @@ export default class App extends React.Component <IAppProps, IAppState> {
     super(props);
     this.state = {
       theme: store.getState().theme.activeTheme,
-      exitAnimation: store.getState()
+      exitAnimation: false
     }
   }
 
@@ -51,20 +52,31 @@ export default class App extends React.Component <IAppProps, IAppState> {
   }
 
   public render(): JSX.Element {
-    const { theme } = this.state;
+    const { theme, exitAnimation } = this.state;
     return (
       <div className={`theme-${theme}`}>
         <div id="app">
           <Navbar />
-          
-          <div className="jumbo">
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route path="/about" component={About} />
-              <Route path="/projects" component={Projects} />
-            </Switch>
-          </div>
-        
+          <Route
+            render={({ location }) => (
+            
+            <TransitionGroup>
+              <CSSTransition
+                key={location.key}
+                classNames="fade"
+                timeout={500}
+              >
+                <div className={`${exitAnimation ? 'exit-animation' : null} jumbo`}>
+                  <Switch location={location}>
+                    <Route exact path="/" component={Home} />
+                    <Route path="/about" component={About} />
+                    <Route path="/projects" component={Projects} />
+                  </Switch>
+                </div>
+              </CSSTransition>
+            </TransitionGroup>
+            )}
+            />
           <Footer />
         </div>
       </div>
