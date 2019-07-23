@@ -63,8 +63,8 @@ export default class App extends React.Component <IAppProps, IAppState> {
             <TransitionGroup>
               <CSSTransition
                 key={location.key}
-                classNames="fade"
-                timeout={500}
+                classNames="slide"
+                timeout={800}
               >
                 <div className={`${exitAnimation ? 'exit-animation' : null} jumbo`}>
                   <Switch location={location}>

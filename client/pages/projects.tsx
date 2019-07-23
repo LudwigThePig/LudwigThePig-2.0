@@ -15,6 +15,7 @@ interface IProjectsProps {
   projects: Array<project>
 }
 
+
 class Projects extends React.Component <IProjectsProps, IProjectsState>  {
 
   private static getProjects() {
