@@ -212,10 +212,9 @@ a:hover {
   }
 }
 
-.slide-enter,
-.slide-exit {
+.slide-enter, .slide-exit {
   position: absolute;
-  transition: 0.8s ease-out opacity;
+  transition: 0.5s ease-out opacity;
 }
 .slide-enter,
 .slide-exit-active {
@@ -224,8 +223,21 @@ a:hover {
 .slide-enter-active {
   opacity: 1;
 }
-  
+
+
 .jumbo:nth-child(1) { animation: slide-in-blurred-top 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) 0.2s both; }
+
+@media screen and (max-width: 720px) {
+  .jumbo:nth-child(1) { animation: none; }
+  .slide-enter, .slide-exit {
+    position: fixed;
+    top: 40%;
+    left: 40%;
+    transform: translate(-40%, -40%);
+  }
+
+}
+
 .jumbo {
   display: block;
   width: 80vw;
