@@ -1,6 +1,9 @@
 const ManifestPlugin = require('webpack-manifest-plugin');
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+ 
+exports.bundleAnalyzer = new BundleAnalyzerPlugin();
 
 exports.manifest = new ManifestPlugin({
   fileName: 'asset-manifest.json', // Not to confuse with manifest.json 

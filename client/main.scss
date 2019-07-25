@@ -233,7 +233,7 @@ a:hover {
     position: fixed;
     top: 40%;
     left: 40%;
-    transform: translate(-40%, -40%);
+    transform: translate(-40%, -45%);
   }
 
 }
@@ -280,11 +280,11 @@ a:hover {
 
   ul {
     button { display: none; }
-
+    
     @include getTheme($themes) {
       background: themed('alt-color');  
     }
-
+    
     list-style-type:none;
     margin: 0;
     padding:0;
@@ -293,7 +293,7 @@ a:hover {
       float: left;
       height: 3rem;
       width: 3rem;
-
+      
       @include getTheme($themes) {
         background: themed('alt-color');  
       }
@@ -305,6 +305,7 @@ a:hover {
       }
       input[type="radio"] {
         position: absolute;
+        cursor: pointer;
         opacity: 0;
         height: inherit;
         width: inherit;
@@ -368,9 +369,18 @@ a:hover {
 
 .footer { 
   grid-area: footer;
-
   -webkit-animation: slide-in-bottom 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) .8s both;
-	animation: slide-in-bottom 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) .8s both;
+  animation: slide-in-bottom 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) .8s both;
+
+  // margin-top: 20px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  height: calc(100vh * 0.15);
+  svg {
+    height: 35px;
+    width: 35px;
+  }
 }
 
 @media only screen and(max-width: 720px) {  
