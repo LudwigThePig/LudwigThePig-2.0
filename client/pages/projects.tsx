@@ -2,7 +2,6 @@ import * as React from 'react';
 import { store } from '../redux/store';
 import Project from './project';
 import { project } from '../types';
-import projects from '../../projects';
 import { updateProjects } from '../redux/actions/projectsAction';
 import axios from 'axios';
 
@@ -19,7 +18,7 @@ interface IProjectsProps {
 class Projects extends React.Component <IProjectsProps, IProjectsState>  {
 
   private static getProjects() {
-    return axios(`http://localhost:3000/api/v1/projects/`)
+    return axios(`/api/v1/projects/`)
       .then(data => data)
       .catch(console.error);
   }
