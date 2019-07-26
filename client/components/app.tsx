@@ -60,12 +60,12 @@ export default class App extends React.Component <IAppProps, IAppState> {
           <Route
             render={({ location }) => (
             
-            <TransitionGroup>
-              <CSSTransition
-                key={location.key}
-                classNames="slide"
-                timeout={800}
-              >
+      //  <TransitionGroup>
+        //      <CSSTransition
+          //      key={location.key}
+            //    classNames="slide"
+              //  timeout={800}
+             // >}
                 <div className={`${exitAnimation ? 'exit-animation' : null} jumbo`}>
                   <Switch location={location}>
                     <Route exact path="/" component={Home} />
@@ -73,8 +73,8 @@ export default class App extends React.Component <IAppProps, IAppState> {
                     <Route path="/projects" component={Projects} />
                   </Switch>
                 </div>
-              </CSSTransition>
-            </TransitionGroup>
+            //</CSSTransition>
+           // </TransitionGroup>
             )}
             />
           <Footer />
