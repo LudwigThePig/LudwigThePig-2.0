@@ -66,7 +66,7 @@ export default class App extends React.Component <IAppProps, IAppState> {
                 classNames="slide"
                 timeout={800}
               >
-                <div className={`${exitAnimation ? 'exit-animation' : null} jumbo`}>
+                <div className={`jumbo`}>
                   <Switch location={location}>
                     <Route exact path="/" component={Home} />
                     <Route path="/about" component={About} />
