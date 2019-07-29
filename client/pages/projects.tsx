@@ -11,7 +11,7 @@ interface IProjectsState {
 }
 
 interface IProjectsProps {
-  projects: Array<project>
+  projects?: Array<project>
 }
 
 

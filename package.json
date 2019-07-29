@@ -94,7 +94,7 @@
     "setupFiles": [
       "raf/polyfill"
     ],
-    "testRegex": "/tests/.*\\.(ts|tsx|js)$",
+    "testRegex": "/tests/.*\\.(ts|tsx)$",
     "setupFilesAfterEnv": [
       "./tests/setupTests.js"
     ]
