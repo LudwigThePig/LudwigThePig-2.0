@@ -10,6 +10,7 @@ import Footer from './footer';
 import Home from '../pages/home';
 import About from '../pages/about';
 import Projects from '../pages/projects';
+import background from './background';
 
 // Redux
 import { store } from '../redux/store';
@@ -49,6 +50,7 @@ export default class App extends React.Component <IAppProps, IAppState> {
         }
       });
     });
+    background();
   }
 
   public render(): JSX.Element {
@@ -56,6 +58,7 @@ export default class App extends React.Component <IAppProps, IAppState> {
     return (
       <div className={`theme-${theme}`}>
         <div id="app">
+        <div id="particles-js" />
           <Navbar />
           <Route
             render={({ location }) => (

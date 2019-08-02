@@ -468,6 +468,24 @@ a:hover {
   text-align: center;
 }
 
+
+//* 5.c Canvas Styling *//
+
+canvas{
+  display: block;
+  vertical-align: bottom;
+}
+/* ---- particles.js container ---- */
+#particles-js{
+  position:absolute;
+  width: 100%;
+  height: 100%;
+  @include getTheme($themes) {
+    background: themed('primary-color');  
+  }
+}
+
+
 /////////////////////
 //* 6. Animations *//
 /////////////////////
