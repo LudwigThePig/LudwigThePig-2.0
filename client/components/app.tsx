@@ -1,16 +1,16 @@
 import * as React from 'react';
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 // Templates
 import Navbar from './navabar'
 import Footer from './footer';
 
-// Components
+// Pages and Components
 import Home from '../pages/home';
 import About from '../pages/about';
 import Projects from '../pages/projects';
-import background from './background';
+import Background from './background';
 
 // Redux
 import { store } from '../redux/store';
@@ -50,7 +50,6 @@ export default class App extends React.Component <IAppProps, IAppState> {
         }
       });
     });
-    background();
   }
 
   public render(): JSX.Element {
@@ -58,7 +57,7 @@ export default class App extends React.Component <IAppProps, IAppState> {
     return (
       <div className={`theme-${theme}`}>
         <div id="app">
-        <div id="particles-js" />
+        <Background />
           <Navbar />
           <Route
             render={({ location }) => (
