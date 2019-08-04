@@ -26,6 +26,10 @@ __Sections__
 //* 2. THEMES *//
 /////////////////
 
+
+//! If you make changes to seconndary or
+//! primary colors, make sure you update 
+//! the 'background'.tsx component too
 $themes: (
   light: (
     primary: #f9f3ed,
