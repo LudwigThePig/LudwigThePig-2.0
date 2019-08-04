@@ -56,8 +56,8 @@ export default class App extends React.Component <IAppProps, IAppState> {
     const { theme, exitAnimation } = this.state;
     return (
       <div className={`theme-${theme}`}>
-        <div id="app">
         <Background />
+        <div id="app">
           <Navbar />
           <Route
             render={({ location }) => (

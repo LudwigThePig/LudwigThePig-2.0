@@ -171,10 +171,10 @@ a:hover {
   width: 100vw;
   position: absolute;
   
-  @include getTheme($themes) {
-    color: themed('secondary');  
-    background-color: themed('primary');  
-  }
+  // @include getTheme($themes) {
+  //   color: themed('secondary');  
+  //   background-color: themed('primary');  
+  // }
 }
 
 @media only screen and(max-width: 720px) {  
@@ -477,13 +477,13 @@ canvas{
   vertical-align: bottom;
 }
 /* ---- particles.js container ---- */
-#particles-js{
-  position:absolute;
-  width: 100%;
-  height: 100%;
+.particle-background{
   @include getTheme($themes) {
     background: themed('primary-color');  
   }
+  position:absolute;
+  width: 100vw;
+  height: 100vh;
 }
 
 
