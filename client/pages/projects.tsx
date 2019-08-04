@@ -41,6 +41,7 @@ class Projects extends React.Component <IProjectsProps, IProjectsState>  {
 
   componentDidMount() {
     Projects.getProjects()
+    // @ts-ignore
       .then(data => store.dispatch(updateProjects(data.data)));
   }
 

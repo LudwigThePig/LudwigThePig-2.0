@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+    // @ts-ignore
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 // Templates

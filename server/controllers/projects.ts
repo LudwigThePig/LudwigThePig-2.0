@@ -13,7 +13,6 @@ export default class ProjectController {
   
   public getProjects(req:Request, res:Response): void {
     const query:IGetParams = req.query;
-    console.log(req.url)
     // If no query
     if (Object.keys(query).length === 0) {
       db.any('SELECT * FROM projects')

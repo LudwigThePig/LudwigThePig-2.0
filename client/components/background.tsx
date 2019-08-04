@@ -123,7 +123,6 @@ const Background:React.FC<IBackgroundProps> = ({theme}) => {
                 size: 4,
                 duration: 0.3,
                 opacity: 1,
-                speed: 3
               },
               repulse: {
                 distance: 200,

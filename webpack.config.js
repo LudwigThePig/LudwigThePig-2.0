@@ -36,5 +36,5 @@ module.exports = {
       },
     ],
   },
-  plugins: [plugins.manifest, plugins.serviceWorker, plugins.copy , plugins.bundleAnalyzer]
+  plugins: [plugins.manifest, plugins.serviceWorker, plugins.copy] //, plugins.bundleAnalyzer]
 }
