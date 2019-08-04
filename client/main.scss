@@ -83,6 +83,9 @@ body {
 h1 {
   font-size: 3rem;
   font-weight: bold;
+  @include getTheme($themes) {
+    color: themed('secondary');  
+  }
 }
 h2 {  font-size: 2.7rem; }
 h3 {  font-size: 2.4rem; }
