@@ -1,11 +1,11 @@
 /node_modules
-.env
 /bin/bundle.js
 
+# Bundles and transpiled stuff
+# serverBundle.js
+# server.js
+# bin/main.css
 
-serverBundle.js
-server.js
-bin/main.css
-
-projects.ts
+# Secrets
 ltp-ssh.pem
+.env
