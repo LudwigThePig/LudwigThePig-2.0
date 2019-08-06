@@ -12,8 +12,8 @@
     "prod:build": "webpack --config webpack.config.js -p",
     "prod:compile": "webpack --config webpack.server.js -p",
     "prod:css": "node-sass client -o bin --output-style compressed",
-    "server": "node serverBundle.js",
-    "start": "npx npm-run-all --parallel prod:*",
+    "start": "node serverBundle.js",
+    "prod:start": "npx npm-run-all --parallel prod:*",
     "test": "jest"
   },
   "author": "",
