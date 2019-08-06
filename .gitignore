@@ -1,7 +1,7 @@
 /node_modules
-/bin/bundle.js
 
 # Bundles and transpiled stuff
+# /bin/bundle.js
 # serverBundle.js
 # server.js
 # bin/main.css
