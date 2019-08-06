@@ -4,7 +4,6 @@
   "description": "",
   "main": "serverBundle.js",
   "scripts": {
-    "build": "webpack --config webpack.config.js -d -w",
     "dev:compile": "webpack --config webpack.server.js -d -w",
     "dev:start": "nodemon serverBundle.js",
     "dev:css": "node-sass -w client -o bin",
