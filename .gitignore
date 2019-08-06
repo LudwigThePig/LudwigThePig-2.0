@@ -2,9 +2,9 @@
 /bin/bundle.js
 
 # Bundles and transpiled stuff
-# serverBundle.js
-# server.js
-# bin/main.css
+serverBundle.js
+server.js
+bin/main.css
 
 # Secrets
 ltp-ssh.pem
