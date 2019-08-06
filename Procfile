@@ -1,4 +1,4 @@
-web: node run prod:css
-web: node run prod:compile
-web: node run prod:build
-web: node run start
+web: npm run prod:css
+web: npm run prod:compile
+web: npm run prod:build
+web: npm start
