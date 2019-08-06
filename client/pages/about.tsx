@@ -7,8 +7,8 @@ const About = () => (
     <br />This a playpen, portal, and everything pig related.
     </h3>
     <h3>
-      This is not my website. 
-      <br />This is <a href="https://imgur.com/dTjfhQ0.jpg">Ludwig's</a> website. 
+      This is not my mine. 
+      <br />This is <a href="https://imgur.com/dTjfhQ0.jpg">Ludwig's</a>. 
     </h3>
     <p>If you would like to learn more about Ludwig's creator, checkout the social links below. 
     <br />If you would like to see how the sausage was made, checkout the <a href="https://github.com/LudwigThePig/LudwigThePig.com-2.0">GitHub repo</a>.</p>
