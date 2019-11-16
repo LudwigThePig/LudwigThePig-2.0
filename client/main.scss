@@ -402,7 +402,35 @@ a:hover {
   }
 }
 
-//* 5.b Page Styling *//
+//* 5.b SVG Components *//
+
+#ludiwg-jumbo {
+  background: #fff;
+  .back-leg { fill: #123456; }
+  .back-leg:hover { fill: #123456; }
+  
+  .slice-1 { fill: #123456; }
+  .slice-1:hover { fill: #123456; }
+  
+  .slice-2 { fill: #123456; }
+  .slice-2:hover { fill: #123456; }
+  
+  
+  .front-leg { fill: #123456; }
+  .front-leg:hover { fill: #123456; }
+  
+  
+  .nose { fill: #123456; }
+  .nose:hover { fill: #123456; }
+  
+  .glasses { fill: #123456; }
+  .glasses:hover { fill: #123456; }
+    
+  .nostril { fill: #123456; }
+  .nostril:hover { fill: #123456; }
+}
+  
+//* 5.c Page Styling *//
 
 #home {
   display: flex;
