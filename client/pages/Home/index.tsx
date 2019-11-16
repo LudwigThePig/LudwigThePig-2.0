@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { store } from '../../redux/store';
 import { updateInitialLoad } from '../../redux/actions/initialLoadAction';
+import LudwigJumbo from '../../components/svgs/ludwigJumbo';
 
 
 interface IAppState {
@@ -36,7 +37,8 @@ class Home extends React.Component <{}, IAppState>{
     return  (
       <div id="home">
         <h1 className={`${animated}Txt`}>Welcome to<br/>LudwigThePig</h1>
-        <img className={`${animated}Img jumbo-img`} src="static/assets/pig-jumbo.png" alt="jumbo ludwig the pig"></img>
+        <LudwigJumbo animated={animated} />
+        {/* <img className={`${animated}Img jumbo-img`} src="static/assets/pig-jumbo.png" alt="jumbo ludwig the pig"></img> */}
       </div>
     )
   }

@@ -12,7 +12,7 @@
     "prod:compile": "webpack --config webpack.server.js -p",
     "prod:css": "node-sass client -o bin --output-style compressed",
     "start": "node serverBundle.js",
-    "prod:start": "npx npm-run-all --parallel prod:*",
+    "prod-start": "npx npm-run-all --parallel prod:*",
     "test": "jest"
   },
   "author": "",
