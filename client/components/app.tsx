@@ -8,9 +8,9 @@ import Navbar from './navabar'
 import Footer from './footer';
 
 // Pages and Components
-import Home from '../pages/home';
-import About from '../pages/about';
-import Projects from '../pages/projects';
+import Home from '../pages/Home';
+import About from '../pages/About';
+import Projects from '../pages/Projects';
 import Background from './background';
 
 // Redux

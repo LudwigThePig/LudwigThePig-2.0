@@ -24,6 +24,7 @@ export default function renderer(html: string, css:string, url:string): string {
   });
   
   html = html.replace(styleRegex, (original, div1:string, div2:string): string => {
+    console.log(div1 + css + div2);
     return div1 + css + div2;
   });
 

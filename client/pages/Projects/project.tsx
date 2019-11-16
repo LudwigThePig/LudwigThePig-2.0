@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { project } from '../types';
+import { project } from '../../types';
 
 const Project = ({id, name, description, url, image_url, created }: project) => {
   let image: Array<string> | string = image_url.split('/');

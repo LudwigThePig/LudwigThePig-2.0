@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { shallow } from 'enzyme';
 
-import Projects from '../client/pages/projects';
+import Projects from '../client/pages/Projects';
 
 const proj = {  
   id: 1,

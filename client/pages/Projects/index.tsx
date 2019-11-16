@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { store } from '../redux/store';
+import { store } from '../../redux/store';
 import Project from './project';
-import { project } from '../types';
-import { updateProjects } from '../redux/actions/projectsAction';
+import { project } from '../../types';
+import { updateProjects } from '../../redux/actions/projectsAction';
 import axios from 'axios';
 
 
