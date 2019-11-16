@@ -1,10 +1,11 @@
 /node_modules
 
 # Bundles and transpiled stuff
-# /bin/bundle.js
-# serverBundle.js
-# server.js
-# bin/main.css
+/bin/bundle.js
+serverBundle.js
+server.js
+bin/main.css
+
 
 # Secrets
 ltp-ssh.pem
