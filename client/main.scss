@@ -404,30 +404,24 @@ a:hover {
 
 //* 5.b SVG Components *//
 
-#ludiwg-jumbo {
-  background: #fff;
-  .back-leg { fill: #123456; }
-  .back-leg:hover { fill: #123456; }
-  
-  .slice-1 { fill: #123456; }
-  .slice-1:hover { fill: #123456; }
-  
-  .slice-2 { fill: #123456; }
-  .slice-2:hover { fill: #123456; }
-  
-  
-  .front-leg { fill: #123456; }
-  .front-leg:hover { fill: #123456; }
-  
-  
-  .nose { fill: #123456; }
-  .nose:hover { fill: #123456; }
-  
-  .glasses { fill: #123456; }
-  .glasses:hover { fill: #123456; }
-    
-  .nostril { fill: #123456; }
-  .nostril:hover { fill: #123456; }
+$dark: #31393C;
+$one: #21C3FF;
+$two: #32C6FC;
+$three: #3FC9FC;
+$four: #25BFF7;
+#ludwig-jumbo {
+
+  .cls-1 { fill: #ed6767; }
+  .cls-1:hover { fill: #793F5C; }
+
+  .cls-2 { fill: $one; }
+  .cls-2:hover { fill: $dark; }
+
+  .cls-3 { fill: $dark; }
+  .cls-3:hover { fill: $one; }
+
+  .cls-4 { fill: #a43a4b; }
+
 }
   
 //* 5.c Page Styling *//

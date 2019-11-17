@@ -7,68 +7,23 @@ interface ILudwigJumbo {
 const LudwigJumbo: React.SFC<ILudwigJumbo> = ({ animated }) => (
   <svg 
     className={`${animated}Img jumbo-img`}
-    id="ludwig-jumbo"
+    id="ludwig-jumbo" 
+    data-name="Layer 2" 
     xmlns="http://www.w3.org/2000/svg" 
-    viewBox="0 0 828 945"
-  >
-    <path 
-      className="back-leg" 
-      d="M640,873q5,49.5,10,99h81l18-36L703,819Z" 
-      transform="translate(-91.02 -26.99)" 
-      fill="#ed6767"
-    />
-    <path 
-      className="back-leg" 
-      d="M370,873l-10,99H279l-18-36,46-117Z" 
-      transform="translate(-91.02 -26.99)" 
-      fill="#ed6767"
-    />
-    <polygon 
-      className="slice-1"
-      points="279 846 54 657 9 522 9 396 27 315 0 207 18 0 162 18 261 72 414 36 279 846" 
-      fill="#001011"
-    />
-    <polygon 
-      className="slice-2"
-      points="279 846 414 873 549 846 612 792 414 36 279 846" 
-      fill="#001011"
-    />
-    <polygon 
-      className="stripe-1"
-      points="774 657 817.99 522 817.99 396 799.99 315 828 207 810 0 666 18 567 72 414 36 774 657" 
-      fill="#001011"
-    />
-    <polygon 
-      className="front-leg"
-      points="54 657 216 792 162 945 90 945 54 657" 
-      fill="#793f5c"
-    />
-    <polygon 
-      className="front-leg"
-      points="666 945 612 792 414 36 774 657 738 945 666 945" 
-      fill="#793f5c"
-    />
-    <polygon 
-      className="nose"
-      points="412.99 684 574.99 630 556.99 513 412.99 441 268.99 513 250.99 630 412.99 684" 
-      fill="#ed6767"
-    />
-    <polygon 
-      className="glasses"
-      points="412.99 333 358.99 342 340.99 450 277.99 513 223.99 522 151.99 477 97.99 369 16.99 342 25.99 315 115.99 342 268.99 306 349.99 324 376.99 315 412.99 306 448.99 315 475.99 324 556.99 306 709.99 342 799.99 315 808.99 342 727.99 369 673.99 477 601.99 522 547.99 513 484.99 450 466.99 342 412.99 333" 
-      fill="#a43a4b"
-    />
-    <polygon 
-      className="nostril"
-      points="484.99 612 466.99 603 457.99 585 457.99 567 466.99 549 484.99 540 502.99 549 511.99 567 511.99 585 502.99 603 484.99 612" 
-      fill="#001011"
-    />
-    <polygon 
-      className="nostril"
-      points="340.99 612 358.99 603 367.99 585 367.99 567 358.99 549 340.99 540 322.99 549 313.99 567 313.99 585 322.99 603 340.99 612" 
-      fill="#001011"
-    />
-  </svg>
+    viewBox="0 0 826 946">
+  <path id="back-right-leg" class="cls-1" d="M640,872q5.1,49.5,10,99h81l18-36q-22.9-58.5-46-117Z" transform="translate(-93 -28)"/>
+  <path id="back-left-leg" class="cls-1" d="M370,871c-3.3,33-6.7,66-10,99H279l-18-36,46-117Z" transform="translate(-93 -28)"/>
+  <polygon id="front-left-leg" class="cls-2" points="55 656 217 791 163 944 91 944 55 656"/>
+  <polygon id="slice-1" class="cls-3" points="279 846 54 657 9 522 9 396 27 315 0 207 18 0 162 18 261 72 414 36 279 846"/>
+  <polygon id="slice-2" class="cls-3" points="277 845 412 872 547 845 610 791 412 35 277 845"/>
+  <polygon id="stripe-3" class="cls-3" points="771 657 815 522 815 396 797 315 825 207 807 0 663 18 564 72 411 36 771 657"/>
+  <polygon id="leg-stripe" class="cls-2" points="664 946 610 793 412 37 772 658 736 946 664 946"/>
+  <polygon id="nose" class="cls-1" points="411 683 573 629 555 512 411 440 267 512 249 629 411 683"/>
+  <polygon id="glasses" class="cls-4" points="411 332 357 341 339 449 276 512 222 521 150 476 96 368 15 341 24 314 114 341 267 305 348 323 375 314 411 305 447 314 474 323 555 305 708 341 798 314 807 341 726 368 672 476 600 521 546 512 483 449 465 341 411 332"/>
+  <polygon id="nostril-1" class="cls-3" points="483 611 465 602 456 584 456 566 465 548 483 539 501 548 510 566 510 584 501 602 483 611"/>
+  <polygon id="nostril-2" class="cls-3" points="339 611 357 602 366 584 366 566 357 548 339 539 321 548 312 566 312 584 321 602 339 611"/>
+</svg>
+
 );
 
 export default LudwigJumbo;
